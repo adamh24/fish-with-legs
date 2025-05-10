@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { color } from "three/tsl";
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 // https://www.npmjs.com/package/react-responsive-masonry
@@ -24,19 +24,67 @@ const CocktailCard = ({ image, title, style }) => (
   </div>
 );
 
+
+
 console.log("screen height:" + window.innerHeight);
 
 const App = () => {
-  const cardHeight = window.innerHeight * 0.5;
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 768);
+
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
 
     <div style={styles.container}>
       <div style={styles.navbar}>
         <p style={styles.navTitle}>Handle</p>
-        <div style={styles.navItems}>
-          {['Home', 'Cocktails', 'Modifiers', 'Recipes', 'Sustainability', 'Ingredients', 'Trends', 'History'].map(item => (
-            <p style={styles.navp} key={item}>{item}</p>
+        {isSmallScreen && (
+          <button style={styles.dropdownButton} onClick={toggleDropdown}>
+            ☰
+          </button>
+        )}
+        <div
+          style={{
+            ...styles.navItems,
+            display: isSmallScreen
+              ? isDropdownOpen
+                ? "flex"
+                : "none"
+              : "flex",
+          }}
+        >
+          {[
+            "Home",
+            "Cocktails",
+            "Modifiers",
+            "Recipes",
+            "Sustainability",
+            "Ingredients",
+            "Trends",
+            "History",
+          ].map((item) => (
+            <p style={styles.navp} key={item}>
+              {item}
+            </p>
           ))}
         </div>
       </div>
@@ -155,6 +203,15 @@ const styles = {
     fontFamily: 'Lora',
     fontSize: 48,
 
+  },
+  dropdownButton: {
+    display: "flex", // Hidden by default
+    backgroundColor: "transparent",
+    border: "none",
+    color: "#F8F6F2",
+    fontSize: 50,
+    cursor: "pointer",
+    marginLeft: 10,
   },
 };
 
