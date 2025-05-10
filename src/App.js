@@ -22,8 +22,10 @@ const CocktailCard = ({ image, title, style }) => (
   </div>
 );
 
+console.log("screen height:" + window.innerHeight);
+
 const App = () => {
-  const cardHeight = '50vh';
+  const cardHeight = window.innerHeight * 0.5;
 
   return (
 
@@ -38,19 +40,20 @@ const App = () => {
       </div>
 
       <div style={styles.gridContainer}>
-        <CocktailCard image={cocktailImages[0]} title={headings[0]} style={{ height: cardHeight, width: '100%' }} />
+        <div style={{display: 'flex', flexDirection: 'row', gap: 10, marginTop: 10}}>
+          <div> 
+            <CocktailCard image={cocktailImages[4]} title={headings[5]} style={{ height: '20vh', width: '60vw' }} />
 
-        <div style={styles.row}>
-          <CocktailCard image={cocktailImages[1]} title={headings[3]} style={{ width: '48%', height: cardHeight * 1.2 }} />
-          <CocktailCard image={cocktailImages[2]} title={headings[4]} style={{ width: '48%', height: cardHeight * 1.2 }} />
+            <div style={styles.row}>
+              <CocktailCard image={cocktailImages[2]} title={headings[4]} style={{ width: '20vw', height: '70vh' }} />
+              <CocktailCard image={cocktailImages[1]} title={headings[3]} style={{ width: '40vw', height: '40vh' }} />
+            </div>
+          </div>
+          <div style={styles.col}>
+            <CocktailCard image={cocktailImages[3]} title={headings[1]} style={{ width: '30vw', height: '60vh' }} />
+          </div>
         </div>
-
-        <div style={styles.row}>
-          <CocktailCard image={cocktailImages[3]} title={headings[1]} style={{ width: '48%', height: cardHeight }} />
-          <CocktailCard image={cocktailImages[4]} title={headings[2]} style={{ width: '48%', height: cardHeight }} />
-        </div>
-
-        <CocktailCard image={cocktailImages[5]} title={headings[5]} style={{ height: cardHeight, width: '100%' }} />
+        <CocktailCard image={cocktailImages[0]} title={headings[0]} style={{ width: '60vw', height: '30vh' }} />
       </div>
     </div>
   );
@@ -65,11 +68,11 @@ const styles = {
     paddingTop: 50,
     paddingBottom: 10,
     paddingHorizontal: 15,
+    boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.3)', // Drop shadow
   },
   navTitle: {
     fontSize: 48,
     color: '#F8F6F2',
-    fontWeight: 'bold',
     justifySelf: 'center',
     fontFamily: 'Lora',
     color: '#F8F6F2',
@@ -99,8 +102,16 @@ const styles = {
     gap: 10,
   },
   row: {
+    display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
+    gap: 10,
+    marginTop: 10,
+  },
+  col: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
     gap: 10,
     marginTop: 10,
   },
@@ -125,9 +136,11 @@ const styles = {
     position: 'relative',
     color: '#F8F6F2',
     fontSize: 18,
-    fontWeight: 'bold',
     padding: 10,
     zIndex: 1,
+    fontFamily: 'Lora',
+    fontSize: 48,
+
   },
 };
 
