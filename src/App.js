@@ -32,6 +32,11 @@ const App = () => {
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
+  const [selectedNavItem, setSelectedNavItem] = useState("Home"); // Default selected item
+
+  const handleNavItemClick = (item) => {
+    setSelectedNavItem(item); // Update the selected item
+  };
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -76,23 +81,30 @@ const App = () => {
             "Home",
             "Cocktails",
             "Modifiers",
-            "Recipes",
             "Sustainability",
             "Ingredients",
-            "Trends",
             "History",
+            "About",
           ].map((item) => (
-            <p style={styles.navp} key={item}>
-              {item}
-            </p>
+            <button
+                  style={{
+                    ...styles.navp,
+                    backgroundColor: selectedNavItem === item ? "#4A2E1B" : "transparent", // Highlight selected item
+                    backgroundColor: "transparent", // Highlight selected item
+
+                    // borderRadius: "5px", // Optional: Add rounded corners
+                    // padding: "5px 10px", // Optional: Add padding for better appearance
+                    border: "none", // Remove border
+                  }}
+                  key={item}
+                  onClick={() => handleNavItemClick(item)} // Update selected item on click
+                >              {item}
+            </button>
           ))}
         </div>
       </div>
       <div style={styles.masonryContainer}>
-        <ResponsiveMasonry
-        // columnsCountBreakPoints={{350: 1, 750: 2, 900: 3}}
-        // gutterBreakpoints={{350: "12px", 750: "16px", 900: "24px"}}
-        >
+        <ResponsiveMasonry>
           <Masonry>
               <CocktailCard image={cocktailImages[3]} title={headings[1]} style={{ width: '-webkit-fill-available', height: '60vh' }} /> {/* botanical */}
               <CocktailCard image={cocktailImages[1]} title={headings[3]} style={{ width: '-webkit-fill-available', height: '40vh' }} /> {/* long floral */}
@@ -147,7 +159,7 @@ const styles = {
     gap: 10,
     marginTop: 10,
     color: '#F8F6F2',
-
+    transition: 'max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
   },
   navp: {
     color: '#F8F6F2',
