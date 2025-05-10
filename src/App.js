@@ -77,7 +77,10 @@ const styles = {
     paddingTop: 10,
     paddingBottom: 10,
     paddingHorizontal: 15,
+    position: 'relative',
+    zIndex: 1,
     boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.3)', // Drop shadow
+
   },
   navTitle: {
     fontSize: 48,
@@ -133,6 +136,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     margin: 10,
+    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
   },
   overlay: {
     position: 'absolute',
