@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "title": "Espresso Martini",
+      "menu": "Classic",
+      "ingredients": ["Espresso", "Vodka", "Coffee Liqueur"],
+      "image": "./assets/cocktail1.png"
+    },
+    {
+      "id": 2,
+      "title": "Pistachio Spritz",
+      "menu": "Botanical",
+      "ingredients": ["Pistachio", "Prosecco", "Soda Water"],
+      "image": "./assets/cocktail2.png"
+    },
+    {
+      "id": 3,
+      "title": "Classic Elegance",
+      "menu": "Classic",
+      "ingredients": ["Gin", "Vermouth", "Lemon"],
+      "image": "./assets/cocktail3.png"
+    },
+    {
+      "id": 4,
+      "title": "Long Floral Twist",
+      "menu": "Botanical",
+      "ingredients": ["Elderflower", "Gin", "Tonic Water"],
+      "image": "./assets/cocktail4.png"
+    },
+    {
+      "id": 5,
+      "title": "Rumtini",
+      "menu": "Tropical",
+      "ingredients": ["Rum", "Pineapple", "Coconut"],
+      "image": "./assets/cocktail5.png"
+    }
+    
+  ]

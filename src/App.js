@@ -5,6 +5,8 @@ import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -12,6 +14,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+
+import Cocktails from "./Cocktails";
 
 const cocktailImages = [
   require("./assets/cocktail1.png"),
@@ -23,8 +27,8 @@ const cocktailImages = [
 ];
 
 const headings = [
-  "Refreshing Mojito", "Botanical Burst", "Classic Elegance",
-  "Long Floral Twist", "Green Zest", "Berry Bliss"
+  "Taste of the Avanteguard Menu", "Pistacio Burboun Fat Wash", "Classic Elegance",
+  "Long Floral Twist", "History of Rum", "Berry Bliss"
 ];
 
 const CocktailCard = ({ image, title, style }) => (
@@ -47,11 +51,6 @@ const App = () => {
   const handleNavItemClick = (item) => {
     setSelectedNavItem(item); // Update the selected item
   };
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -78,7 +77,8 @@ const App = () => {
 
       <div style={styles.navbar}>
         <p style={styles.navTitle}>Handle</p>
-        
+        <Router>
+
         <Navbar key={"-lg"} expand="lg" className="mb-3" bg='#203F2A' style={styles.navbar} >
           <Container fluid>
             {/* <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand> */}
@@ -108,7 +108,7 @@ const App = () => {
                     id={`offcanvasNavbarDropdown-expand-lg`}
                     style={{color: '#F8F6F2', fontSize: 24, fontFamily: 'Lora'}}
                   >
-                    <NavDropdown.Item href="#action3" style={{fontSize: 30}}>Cocktails</NavDropdown.Item>
+                    <NavDropdown.Item href="#action3" as={Link} to="/cocktails">Cocktails</NavDropdown.Item>
                     <NavDropdown.Item href="#action4">Modifiers</NavDropdown.Item>
                     <NavDropdown.Item href="#action4">Ingredients</NavDropdown.Item>
                     
@@ -152,6 +152,19 @@ const App = () => {
             </Navbar.Offcanvas>
           </Container>
         </Navbar>
+        {/* Routes */}
+        <Routes>
+          {/* <Route path="/" element={<Home />} /> */}
+          {/* <Route path="/about" element={<About />} /> */}
+          <Route path="/cocktails" element={<Cocktails />} />
+          {/* <Route path="/modifiers" element={<Modifiers />} />
+          <Route path="/ingredients" element={<Ingredients />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/sustainability" element={<Sustainability />} />
+          <Route path="/contact" element={<Contact />} /> */}
+        </Routes>
+        </Router>
+
         
       </div>
       <div style={styles.masonryContainer}>
