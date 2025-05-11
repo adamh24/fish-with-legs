@@ -1,33 +1,66 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import cocktailData from "./data/cocktails.json"; // Import the JSON data
+import CocktailCard from "./CocktailCard"; // Import the CocktailCard component
 
 const Cocktails = () => {
   const [filter, setFilter] = useState({ menu: "", ingredient: "" }); // Filter state
+  const [filteredCocktails, setFilteredCocktails] = useState(cocktailData); // Filtered items
   const [isAnimating, setIsAnimating] = useState(false); // Animation state
+  const [direction, setDirection] = useState("right"); // Animation direction
 
+  const cocktailImages = [
+    require("./assets/cocktail1.png"),
+    require("./assets/cocktail2.png"),
+    require("./assets/cocktail3.png"),
+    require("./assets/cocktail4.png"),
+    require("./assets/cocktail5.png"),
+    // require("./assets/cocktail6.png")
+  ];
+
+  const headings = [
+    "Taste of the Avanteguard Menu", "Pistacio Burboun Fat Wash", "Classic Elegance",
+    "Long Floral Twist", "History of Rum", "Berry Bliss"
+  ];
+  useEffect(() => {
+    // Trigger the animation on page load
+    setTimeout(() => {
+      setIsAnimating(true);
+    }, 300); // Delay to ensure smooth animation
+  }, [filteredCocktails]);
 
   const handleFilterChange = (newFilter) => {
     setIsAnimating(true); // Start fade-out animation
     setTimeout(() => {
-      setFilter(newFilter); // Update the filter after fade-out
-      setIsAnimating(false); // Start fade-in animation
+        setTimeout(() => {
+            const newFilteredCocktails = cocktailData.filter((cocktail) => {
+                const matchesMenu = newFilter.menu ? cocktail.menu === newFilter.menu : true;
+                const matchesIngredient = newFilter.ingredient
+                  ? cocktail.ingredients.includes(newFilter.ingredient)
+                  : true;
+                return matchesMenu && matchesIngredient;
+              });
+              setFilter(newFilter); // Update the filter state
+      setFilteredCocktails(newFilteredCocktails); // Update the filtered items
+        }, 300); // Match the duration of the fade-out animation
+      
+      
+      setIsAnimating(false); // Trigger animation for new results
     }, 300); // Match the duration of the fade-out animation
   };
 
   // Filter the cocktails based on the selected menu and ingredient
-  const filteredCocktails = cocktailData.filter((cocktail) => {
-    const matchesMenu = filter.menu ? cocktail.menu === filter.menu : true;
-    const matchesIngredient = filter.ingredient
-      ? cocktail.ingredients.includes(filter.ingredient)
-      : true;
-    return matchesMenu && matchesIngredient;
-  });
+   
+
+  const getRandomHeight = () => {
+    const heights = ["20vh", "30vh", "40vh", "50vh", "60vh"];
+    return heights[Math.floor(Math.random() * heights.length)];
+  };
 
   return (
     <div style={styles.container}>
       {/* Filter Buttons */}
-      <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", marginBottom: 20 }}>
+        <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", marginBottom: 20 }}>
         <select
             style={styles.filterSelect}
             onChange={(e) => handleFilterChange({ ...filter, menu: e.target.value })}
@@ -56,30 +89,36 @@ const Cocktails = () => {
         >
           Clear Filters
         </button>
-      </div>
-
-      {/* Cocktail Cards */}
-      <ResponsiveMasonry>
-  <Masonry>
-    {filteredCocktails.map((cocktail) => (
-      <div
-        key={cocktail.id}
+        </div>
+        <div
+        id="animation-div"
         style={{
-          ...styles.card,
-          backgroundImage: `url(${require(`${cocktail.image}`)})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: isAnimating ? 0 : 1, // Fade out or in
-          transform: isAnimating ? "translateX(-50px)" : "translateX(0)", // Slide left or reset
-          transition: "opacity 0.3s ease, transform 0.3s ease", // Smooth animation
+            opacity: isAnimating ? 1 : 0, // Fade in or out
+            transform: isAnimating
+                ? "translateX(0)" // Move to the center
+                : "translateX(100%)", // Start from the right edge
+            transition: `opacity 0.5s ease, transform 0.5s ease `, 
         }}
-      >
-        <div style={styles.overlay}></div>
-        <p style={styles.cardp}>{cocktail.title}</p>
-      </div>
-    ))}
-  </Masonry>
-</ResponsiveMasonry>
+        >
+        <ResponsiveMasonry>
+            <Masonry>
+                
+            {filteredCocktails.map((cocktail, index) => (
+                <CocktailCard
+                key={cocktail.id}
+                image={require(`${cocktail.image}`)}
+                title={cocktail.title}
+                style={{
+                    height: getRandomHeight(), // Assign a random height
+                }}
+                />
+          ))}   
+        </Masonry>
+    </ResponsiveMasonry>
+        </div>
+
+        {/* Cocktail Cards */}
+        
     </div>
   );
 };

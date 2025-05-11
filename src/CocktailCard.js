@@ -1,5 +1,5 @@
 const CocktailCard = ({ image, title, style }) => (
-    <div style={{ ...styles.card, ...style, backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div style={{ ...styles.card, ...style, backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '-webkit-fill-available' }}>
       <div style={styles.overlay}></div>
       <p style={styles.cardp}>{title}</p>
     </div>
@@ -110,5 +110,5 @@ const CocktailCard = ({ image, title, style }) => (
       marginLeft: 10,
     },
   };
-  
+
 export default CocktailCard;
