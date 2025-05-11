@@ -2,6 +2,16 @@ import React, { useState, useEffect } from "react";
 import { color } from "three/tsl";
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 // https://www.npmjs.com/package/react-responsive-masonry
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
 const cocktailImages = [
   require("./assets/cocktail1.png"),
@@ -60,49 +70,82 @@ const App = () => {
   return (
 
     <div style={styles.container}>
+
       <div style={styles.navbar}>
         <p style={styles.navTitle}>Handle</p>
-        {isSmallScreen && (
-          <button style={styles.dropdownButton} onClick={toggleDropdown}>
-            ☰
-          </button>
-        )}
-        <div
-          style={{
-            ...styles.navItems,
-            display: isSmallScreen
-              ? isDropdownOpen
-                ? "flex"
-                : "none"
-              : "flex",
-          }}
-        >
-          {[
-            "Home",
-            "Cocktails",
-            "Modifiers",
-            "Sustainability",
-            "Ingredients",
-            "History",
-            "About",
-          ].map((item) => (
-            <button
-                  style={{
-                    ...styles.navp,
-                    backgroundColor: selectedNavItem === item ? "#4A2E1B" : "transparent", // Highlight selected item
-                    backgroundColor: "transparent", // Highlight selected item
+        
+        <Navbar key={"-lg"} expand="lg" className="mb-3" bg='#203F2A' style={styles.navbar} >
+          <Container fluid>
+            {/* <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand> */}
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
+            <Navbar.Offcanvas
+              id={`offcanvasNavbar-expand-lg`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
+              placement="end"
+              // variant="outline-light"
+            >
 
-                    // borderRadius: "5px", // Optional: Add rounded corners
-                    // padding: "5px 10px", // Optional: Add padding for better appearance
-                    border: "none", // Remove border
-                  }}
-                  key={item}
-                  onClick={() => handleNavItemClick(item)} // Update selected item on click
-                >              {item}
-            </button>
-          ))}
-        </div>
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}>
+                  Offcanvas
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+
+              <Offcanvas.Body>
+                <Nav className="justify-content-end flex-grow-1 pe-3">
+
+                  <Nav.Link href="#action1" style={styles.navp}>Home</Nav.Link>
+                  <Nav.Link href="#action2" style={styles.navp}>Recipies</Nav.Link>
+                  <Nav.Link href="#action2" style={styles.navp}>About</Nav.Link>
+
+                  <NavDropdown
+                    title={<span style={styles.navp}>More</span>}
+                    id={`offcanvasNavbarDropdown-expand-lg`}
+                    style={{color: '#F8F6F2', fontSize: 24, fontFamily: 'Lora'}}
+                  >
+                    <NavDropdown.Item href="#action3">Cocktails</NavDropdown.Item>
+                    <NavDropdown.Item href="#action4">Modifiers</NavDropdown.Item>
+                    <NavDropdown.Item href="#action4">Ingredients</NavDropdown.Item>
+                    <NavDropdown.Item href="#action3">History</NavDropdown.Item>
+                    <NavDropdown.Item href="#action4">Sustainability</NavDropdown.Item>
+
+                    <NavDropdown.Divider />
+
+                    <NavDropdown.Item href="#action5">
+                      Contact
+                    </NavDropdown.Item>
+                  </NavDropdown>
+
+                </Nav>
+
+                <Form className="d-flex">
+                  <Form.Control
+                    type="search"
+                    placeholder="Search"
+                    className="me-2"
+                    aria-label="Search"
+                  />
+                  <Button variant="outline-light">Search</Button>
+                </Form>
+
+              </Offcanvas.Body>
+
+            </Navbar.Offcanvas>
+          </Container>
+        </Navbar>
+        
       </div>
+
+
+
+
+
+
+
+
+
+
+
       <div style={styles.masonryContainer}>
         <ResponsiveMasonry>
           <Masonry>
