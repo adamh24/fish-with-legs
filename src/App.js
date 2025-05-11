@@ -95,17 +95,26 @@ const App = () => {
                 <Nav className="justify-content-end flex-grow-1 pe-3">
 
                   <Nav.Link href="#action1" style={styles.navp}>Home</Nav.Link>
-                  <Nav.Link href="#action2" style={styles.navp}>Recipies</Nav.Link>
+
                   <Nav.Link href="#action2" style={styles.navp}>About</Nav.Link>
 
                   <NavDropdown
-                    title={<span style={styles.navp}>More</span>}
+                    title={<span style={styles.navp}>Recipes</span>}
                     id={`offcanvasNavbarDropdown-expand-lg`}
                     style={{color: '#F8F6F2', fontSize: 24, fontFamily: 'Lora'}}
                   >
                     <NavDropdown.Item href="#action3">Cocktails</NavDropdown.Item>
                     <NavDropdown.Item href="#action4">Modifiers</NavDropdown.Item>
                     <NavDropdown.Item href="#action4">Ingredients</NavDropdown.Item>
+                    
+                  </NavDropdown>
+
+                  <NavDropdown
+                    title={<span style={styles.navp}>More</span>}
+                    id={`offcanvasNavbarDropdown-expand-lg`}
+                    style={{color: '#F8F6F2', fontSize: 24, fontFamily: 'Lora'}}
+                  >
+                    
                     <NavDropdown.Item href="#action3">History</NavDropdown.Item>
                     <NavDropdown.Item href="#action4">Sustainability</NavDropdown.Item>
 
