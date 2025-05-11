@@ -5,6 +5,8 @@ import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
+import Home from "./Home";
+
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import Button from 'react-bootstrap/Button';
@@ -17,26 +19,8 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 
 import Cocktails from "./Cocktails";
 
-const cocktailImages = [
-  require("./assets/cocktail1.png"),
-  require("./assets/cocktail2.png"),
-  require("./assets/cocktail3.png"),
-  require("./assets/cocktail4.png"),
-  require("./assets/cocktail5.png"),
-  // require("./assets/cocktail6.png")
-];
 
-const headings = [
-  "Taste of the Avanteguard Menu", "Pistacio Burboun Fat Wash", "Classic Elegance",
-  "Long Floral Twist", "History of Rum", "Berry Bliss"
-];
 
-const CocktailCard = ({ image, title, style }) => (
-  <div style={{ ...styles.card, ...style, backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-    <div style={styles.overlay}></div>
-    <p style={styles.cardp}>{title}</p>
-  </div>
-);
 
 
 
@@ -74,10 +58,9 @@ const App = () => {
       <img src={require("./assets/seaweed.png")} alt="seaweed" style={{ position: 'absolute', bottom: '-124px', left: '-100px', height: 'auto', zIndex: 0 }} />
       <img src={require("./assets/seaweed.png")} alt="seaweed" style={{ position: 'absolute', bottom: '-124px', right: '-100px', height: '80vh', zIndex: 0 }} />
 
-
+      <Router>
       <div style={styles.navbar}>
         <p style={styles.navTitle}>Handle</p>
-        <Router>
 
         <Navbar key={"-lg"} expand="lg" className="mb-3" bg='#203F2A' style={styles.navbar} >
           <Container fluid>
@@ -99,7 +82,7 @@ const App = () => {
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
 
-                  <Nav.Link href="#action1" style={styles.navp}>Home</Nav.Link>
+                  <Nav.Link href="#action1" as={Link} to="/" style={styles.navp}>Home</Nav.Link>
 
                   <Nav.Link href="#action2" style={styles.navp}>About</Nav.Link>
 
@@ -153,8 +136,15 @@ const App = () => {
           </Container>
         </Navbar>
         {/* Routes */}
-        <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
+       
+
+        
+      </div>
+
+      
+      
+      <Routes>
+          <Route path="/" element={<Home />} />
           {/* <Route path="/about" element={<About />} /> */}
           <Route path="/cocktails" element={<Cocktails />} />
           {/* <Route path="/modifiers" element={<Modifiers />} />
@@ -164,26 +154,9 @@ const App = () => {
           <Route path="/contact" element={<Contact />} /> */}
         </Routes>
         </Router>
-
-        
-      </div>
-      <div style={styles.masonryContainer}>
-        <ResponsiveMasonry>
-          <Masonry>
-              <CocktailCard image={cocktailImages[3]} title={headings[1]} style={{ width: '-webkit-fill-available', height: '60vh' }} /> {/* botanical */}
-              <CocktailCard image={cocktailImages[1]} title={headings[3]} style={{ width: '-webkit-fill-available', height: '40vh' }} /> {/* long floral */}
-              <CocktailCard image={cocktailImages[4]} title={headings[5]} style={{ height: '20vh', width: '-webkit-fill-available' }} /> {/* berry bliss */}
-              <div></div>
-              <CocktailCard image={cocktailImages[0]} title={headings[0]} style={{ width: '-webkit-fill-available', height: '30vh' }} /> {/* mojito */}
-              <CocktailCard image={cocktailImages[2]} title={headings[4]} style={{ width: '-webkit-fill-available', height: '50vh' }} /> {/* green zest */}
-
-            </Masonry>
-        </ResponsiveMasonry>
-      </div>
-      
-
      
     </div>
+
   );
 };
 

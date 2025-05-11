@@ -4,6 +4,16 @@ import cocktailData from "./data/cocktails.json"; // Import the JSON data
 
 const Cocktails = () => {
   const [filter, setFilter] = useState({ menu: "", ingredient: "" }); // Filter state
+  const [isAnimating, setIsAnimating] = useState(false); // Animation state
+
+
+  const handleFilterChange = (newFilter) => {
+    setIsAnimating(true); // Start fade-out animation
+    setTimeout(() => {
+      setFilter(newFilter); // Update the filter after fade-out
+      setIsAnimating(false); // Start fade-in animation
+    }, 300); // Match the duration of the fade-out animation
+  };
 
   // Filter the cocktails based on the selected menu and ingredient
   const filteredCocktails = cocktailData.filter((cocktail) => {
@@ -19,26 +29,26 @@ const Cocktails = () => {
       {/* Filter Buttons */}
       <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", marginBottom: 20 }}>
         <select
-          style={styles.filterSelect}
-          onChange={(e) => setFilter({ ...filter, menu: e.target.value })}
-        >
-          <option value="">Filter by Menu</option>
-          <option value="Classic">Classic</option>
-          <option value="Botanical">Botanical</option>
-          <option value="Tropical">Tropical</option>
-        </select>
-        <select
-          style={styles.filterSelect}
-          onChange={(e) => setFilter({ ...filter, ingredient: e.target.value })}
-        >
-          <option value="">Filter by Ingredient</option>
-          <option value="Espresso">Espresso</option>
-          <option value="Vodka">Vodka</option>
-          <option value="Coffee Liqueur">Coffee Liqueur</option>
-          <option value="Pistachio">Pistachio</option>
-          <option value="Prosecco">Prosecco</option>
-          <option value="Rum">Rum</option>
-          <option value="Berries">Berries</option>
+            style={styles.filterSelect}
+            onChange={(e) => handleFilterChange({ ...filter, menu: e.target.value })}
+            >
+            <option value="">Filter by Menu</option>
+            <option value="Classic">Classic</option>
+            <option value="Botanical">Botanical</option>
+            <option value="Tropical">Tropical</option>
+            </select>
+            <select
+            style={styles.filterSelect}
+            onChange={(e) => handleFilterChange({ ...filter, ingredient: e.target.value })}
+            >
+            <option value="">Filter by Ingredient</option>
+            <option value="Espresso">Espresso</option>
+            <option value="Vodka">Vodka</option>
+            <option value="Coffee Liqueur">Coffee Liqueur</option>
+            <option value="Pistachio">Pistachio</option>
+            <option value="Prosecco">Prosecco</option>
+            <option value="Rum">Rum</option>
+            <option value="Berries">Berries</option>
         </select>
         <button
           style={styles.clearButton}
@@ -50,23 +60,26 @@ const Cocktails = () => {
 
       {/* Cocktail Cards */}
       <ResponsiveMasonry>
-        <Masonry>
-          {filteredCocktails.map((cocktail) => (
-            <div
-              key={cocktail.id}
-              style={{
-                ...styles.card,
-                backgroundImage: `url(${require(`${cocktail.image}`)})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div style={styles.overlay}></div>
-              <p style={styles.cardp}>{cocktail.title}</p>
-            </div>
-          ))}
-        </Masonry>
-      </ResponsiveMasonry>
+  <Masonry>
+    {filteredCocktails.map((cocktail) => (
+      <div
+        key={cocktail.id}
+        style={{
+          ...styles.card,
+          backgroundImage: `url(${require(`${cocktail.image}`)})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: isAnimating ? 0 : 1, // Fade out or in
+          transform: isAnimating ? "translateX(-50px)" : "translateX(0)", // Slide left or reset
+          transition: "opacity 0.3s ease, transform 0.3s ease", // Smooth animation
+        }}
+      >
+        <div style={styles.overlay}></div>
+        <p style={styles.cardp}>{cocktail.title}</p>
+      </div>
+    ))}
+  </Masonry>
+</ResponsiveMasonry>
     </div>
   );
 };
