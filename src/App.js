@@ -3,7 +3,7 @@ import { color } from "three/tsl";
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 // https://www.npmjs.com/package/react-responsive-masonry
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -71,6 +71,11 @@ const App = () => {
 
     <div style={styles.container}>
 
+      {/* seaweed background */}
+      <img src={require("./assets/seaweed.png")} alt="seaweed" style={{ position: 'absolute', bottom: '-124px', left: '-100px', height: 'auto', zIndex: 0 }} />
+      <img src={require("./assets/seaweed.png")} alt="seaweed" style={{ position: 'absolute', bottom: '-124px', right: '-100px', height: '80vh', zIndex: 0 }} />
+
+
       <div style={styles.navbar}>
         <p style={styles.navTitle}>Handle</p>
         
@@ -103,7 +108,7 @@ const App = () => {
                     id={`offcanvasNavbarDropdown-expand-lg`}
                     style={{color: '#F8F6F2', fontSize: 24, fontFamily: 'Lora'}}
                   >
-                    <NavDropdown.Item href="#action3">Cocktails</NavDropdown.Item>
+                    <NavDropdown.Item href="#action3" style={{fontSize: 30}}>Cocktails</NavDropdown.Item>
                     <NavDropdown.Item href="#action4">Modifiers</NavDropdown.Item>
                     <NavDropdown.Item href="#action4">Ingredients</NavDropdown.Item>
                     
@@ -133,8 +138,13 @@ const App = () => {
                     placeholder="Search"
                     className="me-2"
                     aria-label="Search"
+                    style={{borderRadius: '2.5rem', fontSize: 20}}
                   />
-                  <Button variant="outline-light">Search</Button>
+                <Button  
+                style={{paddingRight: 10}}
+                variant="outline-light">
+                    <i className="bi bi-search"></i> {/* Add the search icon */}
+                  </Button>                
                 </Form>
 
               </Offcanvas.Body>
@@ -144,17 +154,6 @@ const App = () => {
         </Navbar>
         
       </div>
-
-
-
-
-
-
-
-
-
-
-
       <div style={styles.masonryContainer}>
         <ResponsiveMasonry>
           <Masonry>
@@ -169,6 +168,8 @@ const App = () => {
         </ResponsiveMasonry>
       </div>
       
+
+     
     </div>
   );
 };
@@ -187,7 +188,7 @@ const styles = {
   navbar: {
     backgroundColor: '#5A3E2B',
     paddingTop: 10,
-    paddingBottom: 10,
+    paddingBottom: 20,
     paddingHorizontal: 15,
     position: 'relative',
     zIndex: 1,
@@ -216,7 +217,7 @@ const styles = {
   navp: {
     color: '#F8F6F2',
     marginRight: 15,
-    fontSize: 24,
+    fontSize: 32,
     width: 'min-content',
     fontFamily: 'Lora',
 
