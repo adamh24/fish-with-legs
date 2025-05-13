@@ -4,40 +4,17 @@ import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 // https://www.npmjs.com/package/react-responsive-masonry
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
-import Home from "./Home";
-
-import DaliMenu from "./dali";
-
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-
+import Home from "./Home";
+import DaliMenu from "./Dali";
 import Cocktails from "./Cocktails";
 import Navigation from "./Navigation";
 
-
-
-
-
-
-console.log("screen height:" + window.innerHeight);
-
 const App = () => {
 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
-  const [selectedNavItem, setSelectedNavItem] = useState("Home"); // Default selected item
 
-  const handleNavItemClick = (item) => {
-    setSelectedNavItem(item); // Update the selected item
-  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -100,13 +77,13 @@ const styles = {
 
   },
   navbar: {
-    backgroundColor: '#5A3E2B',
+    backgroundColor: '#203F2A',
     paddingTop: 10,
     paddingBottom: 20,
     paddingHorizontal: 15,
     position: 'relative',
     zIndex: 1,
-    boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.3)', // Drop shadow
+    // boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.3)', // Drop shadow
 
   },
   navTitle: {

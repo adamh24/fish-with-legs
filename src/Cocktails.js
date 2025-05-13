@@ -18,10 +18,7 @@ const Cocktails = () => {
     // require("./assets/cocktail6.png")
   ];
 
-  const headings = [
-    "Taste of the Avanteguard Menu", "Pistacio Burboun Fat Wash", "Classic Elegance",
-    "Long Floral Twist", "History of Rum", "Berry Bliss"
-  ];
+
   useEffect(() => {
     if (filteredCocktails !== cocktailData) {
         // Trigger the animation only when the filter changes
@@ -55,10 +52,7 @@ const Cocktails = () => {
         setIsAnimating(false); // End animation
       }, 200); // Match the duration of the fade-in animation
     }, 200); // Match the duration of the fade-out animation
-  };
-
-  // Filter the cocktails based on the selected menu and ingredient
-   
+  };   
 
   const getRandomHeight = () => {
     const heights = ["20vh", "30vh", "40vh", "50vh", "60vh"];
