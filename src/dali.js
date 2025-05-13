@@ -20,48 +20,26 @@ const DaliMenu = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>Dali Menu</h1>
-      <div
-        id="animation-div"
-        style={{
-          opacity: isAnimating ? 1 : 0, // Fade in
-          transform: isAnimating ? "translateX(0)" : "translateX(-100%)", // Slide in from the left
-          transition: "opacity 0.5s ease, transform 0.5s ease", // Smooth animation
-        }}
-      >
-        <ResponsiveMasonry>
-          <Masonry>
-            {filteredCocktails.map((cocktail) => (
-              <CocktailCard
+    <div >
+      <ResponsiveMasonry>
+            <Masonry>
+                
+            {filteredCocktails.map((cocktail, index) => (
+                <CocktailCard
                 key={cocktail.id}
                 image={require(`${cocktail.image}`)}
                 title={cocktail.title}
                 style={{
-                  height: getRandomHeight(), // Assign a random height
+                    height: getRandomHeight(), // Assign a random height
                 }}
-              />
-            ))}
-          </Masonry>
-        </ResponsiveMasonry>
-      </div>
+                />
+          ))}   
+        </Masonry>
+      </ResponsiveMasonry>  
+      
     </div>
   );
 };
 
-const styles = {
-  container: {
-    backgroundColor: "#203F2A",
-    minHeight: "100vh",
-    padding: "20px",
-  },
-  title: {
-    color: "#F8F6F2",
-    textAlign: "center",
-    marginBottom: "20px",
-    fontSize: "36px",
-    fontFamily: "Lora",
-  },
-};
 
 export default DaliMenu;

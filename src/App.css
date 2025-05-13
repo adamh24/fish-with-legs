@@ -1,8 +1,136 @@
-@media (max-width: 768px) {
-  .navItems {
-    display: none !important; /* Hide nav items by default */
-  }
-  .dropdownButton {
-    display: block !important; /* Show dropdown button */
-  }
+.main-container {
+  background-color: #203F2A;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.masonry-container {
+  padding-top: 2vh;
+  padding-inline: 2vh;
+  background-color: #203F2A;
+}
+
+.navbar {
+  background-color: #5A3E2B;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-inline: 15px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); 
+}
+
+.nav-title {
+  font-size: 48px;
+  color: #F8F6F2;
+  justify-self: center;
+  font-family: Lora;
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
+  margin-top: 10px;
+  color: #F8F6F2;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navp {
+  color: #F8F6F2;
+  margin-right: 15px;
+  font-size: 32px;
+  width: min-content;
+  font-family: Lora;
+}
+
+.grid-container {
+  padding: 10px;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.card {
+  position: relative;
+  justify-content: flex-end;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background-size: cover;
+  background-position: center;
+  width: -webkit-fill-available;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(32, 63, 42, 0.4);
+}
+
+.cardp {
+  position: relative;
+  color: #F8F6F2;
+  font-size: 48px;
+  padding: 10px;
+  z-index: 1;
+  font-family: Lora;
+}
+
+.dropdown-button {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  color: #F8F6F2;
+  font-size: 50px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filter-select {
+  margin: 0 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+
+}
+
+.clear-button {
+  background-color: #5A3E2B;
+  color: #F8F6F2;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  /* font-size: 16px; */
 }
