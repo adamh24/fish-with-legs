@@ -20,6 +20,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 import Cocktails from "./Cocktails";
+import Navigation from "./Navigation";
 
 
 
@@ -62,108 +63,23 @@ const App = () => {
 
       <Router>
         <div style={styles.navbar}>
-        <p style={styles.navTitle}>Handle</p>
-
-          <Navbar key={"-lg"} expand="lg" className="mb-3" bg='#203F2A' style={styles.navbar} >
-            <Container fluid>
-              {/* <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand> */}
-              <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
-              <Navbar.Offcanvas
-                id={`offcanvasNavbar-expand-lg`}
-                aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
-                placement="end"
-                // variant="outline-light"
-              >
-
-                <Offcanvas.Header closeButton>
-                  <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}>
-                    Offcanvas
-                  </Offcanvas.Title>
-                </Offcanvas.Header>
-
-                <Offcanvas.Body>
-                  <Nav className="justify-content-end flex-grow-1 pe-3">
-
-                    <Nav.Link href="#action1" as={Link} to="/" style={styles.navp}>Home</Nav.Link>
-
-                    <Nav.Link href="#action2" style={styles.navp}>About</Nav.Link>
-
-                    <NavDropdown
-                      title={<span style={styles.navp}>Menus</span>}
-                      id={`offcanvasNavbarDropdown-expand-lg`}
-                      style={{color: '#F8F6F2', fontSize: 24, fontFamily: 'Lora'}}
-                    >
-                      <NavDropdown.Item href="#action3" as={Link} to="/dali-menu" viewTransition>Dali</NavDropdown.Item>
-                      
-                    </NavDropdown>
-
-                    <NavDropdown
-                      title={<span style={styles.navp}>Recipes</span>}
-                      id={`offcanvasNavbarDropdown-expand-lg`}
-                      style={{color: '#F8F6F2', fontSize: 24, fontFamily: 'Lora'}}
-                    >
-                      <NavDropdown.Item href="#action3" as={Link} to="/cocktails" viewTransition>Cocktails</NavDropdown.Item>
-                      <NavDropdown.Item href="#action4">Modifiers</NavDropdown.Item>
-                      <NavDropdown.Item href="#action4">Ingredients</NavDropdown.Item>
-                      
-                    </NavDropdown>
-
-                    <NavDropdown
-                      title={<span style={styles.navp}>More</span>}
-                      id={`offcanvasNavbarDropdown-expand-lg`}
-                      style={{color: '#F8F6F2', fontSize: 24, fontFamily: 'Lora'}}
-                    >
-                      
-                      <NavDropdown.Item href="#action3">History</NavDropdown.Item>
-                      <NavDropdown.Item href="#action4">Sustainability</NavDropdown.Item>
-
-                      <NavDropdown.Divider />
-
-                      <NavDropdown.Item href="#action5">
-                        Contact
-                      </NavDropdown.Item>
-                    </NavDropdown>
-
-                  </Nav>
-
-                  <Form className="d-flex">
-                    <Form.Control
-                      type="search"
-                      placeholder="Search"
-                      className="me-2"
-                      aria-label="Search"
-                      style={{borderRadius: '2.5rem', fontSize: 20}}
-                    />
-                  <Button  
-                  style={{paddingRight: 10}}
-                  variant="outline-light">
-                      <i className="bi bi-search"></i> {/* Add the search icon */}
-                    </Button>                
-                  </Form>
-
-                </Offcanvas.Body>
-
-              </Navbar.Offcanvas>
-            </Container>
-          </Navbar>
-          {/* Routes */}
+          <p style={styles.navTitle}>Handle</p>
+          <Navigation/>
         </div>
 
-      
-       
         <Routes>
           
             <Route path="/" element={<Home />} />
-            {/* <Route path="/about" element={<About />} /> */}
             <Route path="/cocktails" element={<Cocktails />} />
             <Route path="/dali-menu" element={<DaliMenu />} />
+            {/* <Route path="/about" element={<About />} /> */}
             {/* <Route path="/modifiers" element={<Modifiers />} />
             <Route path="/ingredients" element={<Ingredients />} />
             <Route path="/history" element={<History />} />
             <Route path="/sustainability" element={<Sustainability />} />
             <Route path="/contact" element={<Contact />} /> */}
-        </Routes>
 
+        </Routes>
       </Router>
      
     </div>
