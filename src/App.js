@@ -7,6 +7,7 @@ import Home from "./Home";
 import DaliMenu from "./Dali";
 import Cocktails from "./Cocktails";
 import Navigation from "./Navigation";
+import Nav2 from "./Nav2";
 
 import "./App.css"; // Import the CSS file
 
@@ -38,10 +39,13 @@ const App = () => {
       <img src={require("./assets/seaweed.png")} alt="seaweed" style={{ position: 'absolute', bottom: '-124px', right: '-100px', height: '80vh', zIndex: 0 }} />
 
       <Router>
-        <div className="navbar">
+        
+        {/* <div className="navbar">
           <p className="nav-title">Handle</p>
           <Navigation/>
-        </div>
+        </div> */}
+
+        <Nav2/>
 
         <Routes>
           
