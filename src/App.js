@@ -7,6 +7,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import Home from "./Home";
 
+import DaliMenu from "./dali";
+
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import Button from 'react-bootstrap/Button';
@@ -87,6 +89,15 @@ const App = () => {
                     <Nav.Link href="#action2" style={styles.navp}>About</Nav.Link>
 
                     <NavDropdown
+                      title={<span style={styles.navp}>Menus</span>}
+                      id={`offcanvasNavbarDropdown-expand-lg`}
+                      style={{color: '#F8F6F2', fontSize: 24, fontFamily: 'Lora'}}
+                    >
+                      <NavDropdown.Item href="#action3" as={Link} to="/dali-menu" viewTransition>Dali</NavDropdown.Item>
+                      
+                    </NavDropdown>
+
+                    <NavDropdown
                       title={<span style={styles.navp}>Recipes</span>}
                       id={`offcanvasNavbarDropdown-expand-lg`}
                       style={{color: '#F8F6F2', fontSize: 24, fontFamily: 'Lora'}}
@@ -145,6 +156,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             {/* <Route path="/about" element={<About />} /> */}
             <Route path="/cocktails" element={<Cocktails />} />
+            <Route path="/dali-menu" element={<DaliMenu />} />
             {/* <Route path="/modifiers" element={<Modifiers />} />
             <Route path="/ingredients" element={<Ingredients />} />
             <Route path="/history" element={<History />} />

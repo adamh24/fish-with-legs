@@ -33,6 +33,13 @@
       "menu": "Tropical",
       "ingredients": ["Rum", "Pineapple", "Coconut"],
       "image": "./assets/cocktail5.png"
+    },
+    {
+      "id": 6,
+      "title": "Elephant",
+      "menu": "Dali",
+      "ingredients": ["Amarula", "Sweet Vermouth", "Cacao Bitters"],
+      "image": "./assets/cocktail5.png"
     }
     
   ]
