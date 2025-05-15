@@ -4,7 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import Home from "./Home";
-import DaliMenu from "./Dali";
+import DaliMenu from "./dali";
 import Cocktails from "./Cocktails";
 import Navigation from "./Navigation";
 import Nav2 from "./Nav2";
