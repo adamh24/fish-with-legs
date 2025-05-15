@@ -39,8 +39,14 @@ const Navigation = () => {
                 exit={{ opacity: 0, y: -10 }}
                 className="dropdown-content"
               >
-                <Link to="/menu1">Menu 1</Link>
-                <Link to="/menu2">Menu 2</Link>
+                <Link to="/recipies">Recipies</Link>
+                <Link to="/menus">Menus</Link>
+                <Link to="/sustainability">Sustainability</Link>
+                <Link to="/about">About</Link>
+                <Link to="/history">History</Link>
+                <Link to="/contact">Contact</Link>
+                <Link to="/ingredients">Ingredients</Link>
+                <Link to="/education">Education</Link>
               </div>
             
           </div>
