@@ -46,7 +46,7 @@ const Navigation = () => {
           </div>
 
           <div className="nav-item dropdown group">
-            <span>Recipes</span>
+            <span className="menu-text">Recipes</span>
             <div className="dropdown-content">
               <Link to="/cocktails">Cocktails</Link>
               <Link to="/recipe2">Recipe 2</Link>
@@ -54,7 +54,7 @@ const Navigation = () => {
           </div>
 
           <div className="nav-item dropdown group">
-            <span>Menus</span>
+            <span className="menu-text">Menus</span>
             <div className="dropdown-content">
               <Link to="/dali-menu">Dali Menu</Link>
               <Link to="/event-menu">Event Menu</Link>
