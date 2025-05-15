@@ -31,10 +31,9 @@ const Navigation = () => {
 
         <div className='nav-left'>
 
-          <div className="menu-dropdown group">
+          <div className="menu-dropdown dropdown group">
             <FiMenu className="menu-icon" />
-            <AnimatePresence>
-              <motion.div
+           <div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
@@ -42,8 +41,7 @@ const Navigation = () => {
               >
                 <Link to="/menu1">Menu 1</Link>
                 <Link to="/menu2">Menu 2</Link>
-              </motion.div>
-            </AnimatePresence>
+              </div>
             
           </div>
 
