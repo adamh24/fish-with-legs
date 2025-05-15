@@ -3,7 +3,7 @@
 .navbar {
     background-color: #1e3b2f;
     color: white;
-    padding: 2rem 2rem;
+    padding: 1rem 2rem;
     position: relative;
     z-index: 10;
   }
@@ -11,14 +11,13 @@
   .navbar-container {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the title horizontally */
-    position: relative; /* Allows positioning of other elements */
-    width: 100%;
+    justify-content: space-between; /* Distribute space between nav-left, nav-title, and nav-right */
+    width: 100%; /* Full width of the navbar */
+    font-family: Lora;
   }
   
   .nav-title {
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-size: 3rem;
     text-decoration: none;
     color: white;
     position: absolute; /* Keeps the title centered */
@@ -27,37 +26,49 @@
   }
 
   .nav-title-container {
+    flex: 5; /* Takes up 7/9 of the width */
     display: flex;
     align-items: center;
     justify-content: center; /* Center the title horizontally */
-    border-bottom: 2px solid white; /* Add a solid white border at the bottom */
-    padding-bottom: 0.5rem; /* Add some spacing between the title and the border */
-
-
+    padding: 2em;
+    margin-inline: 4em;;
+    border-bottom: 2px solid white;
   }
   
   .nav-right {
+    flex: 2; /* Takes up 1/9 of the width */
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    position: absolute; /* Position the nav-right */
-    right: 2rem; /* Align it to the right */
-    font-family: 'Lora';
+    justify-content: space-between;; /* Align content to the right */
+    font-size: x-large;
+    padding-left: 2em;
+    padding-top: 2rem;
+  }
+  @media (max-width: 800px) {
+    .nav-right {
+      display: none;
+    }
+    .nav-left {
+      display: none;
+    }
+    .nav-item {
+      display: none;
+    }
   }
 
   .nav-left {
+    flex: 2; /* Takes up 1/9 of the width */
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    position: absolute; /* Position the nav-left */
-    left: 2rem; /* Align it to the left */
-    font-family: 'Lora';
+    justify-content: space-between; /* Align content to the left */
+    padding-right: 2em;
+    padding-top: 2rem;
   }
   
   .nav-item {
     position: relative;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: x-large;
   }
   
   .nav-item span {
@@ -167,7 +178,7 @@
     text-decoration: none; /* Remove text decoration */
   }
   
-  .menu-text:hover
+  .menu-text:hover, .search-icon:hover
    {
     color: rgb(188, 194, 184); 
     }
