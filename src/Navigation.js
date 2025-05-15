@@ -31,25 +31,31 @@ const Navigation = () => {
 
         <div className='nav-left'>
 
-          <div className="menu-dropdown dropdown group">
-            <FiMenu className="menu-icon" />
-           <div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="dropdown-content"
-              >
-                <Link to="/recipies">Recipies</Link>
-                <Link to="/menus">Menus</Link>
-                <Link to="/sustainability">Sustainability</Link>
-                <Link to="/about">About</Link>
-                <Link to="/history">History</Link>
-                <Link to="/contact">Contact</Link>
-                <Link to="/ingredients">Ingredients</Link>
-                <Link to="/education">Education</Link>
+        <div className="menu-dropdown dropdown group">
+          <FiMenu className="menu-icon" />
+          <div className="dropdown-content">
+            <div className="nav-item dropdown group">
+              <span className="menu-text">Recipes</span>
+              <div className="dropdown-content">
+                <Link to="/cocktails">Cocktails</Link>
+                <Link to="/recipe2">Recipe 2</Link>
               </div>
-            
+            </div>
+            <div className="nav-item dropdown group">
+              <span className="menu-text">Menus</span>
+              <div className="dropdown-content">
+                <Link to="/dali-menu">Dali Menu</Link>
+                <Link to="/event-menu">Event Menu</Link>
+              </div>
+            </div>
+            <Link to="/sustainability">Sustainability</Link>
+            <Link to="/about">About</Link>
+            <Link to="/history">History</Link>
+            <Link to="/contact">Contact</Link>
+            <Link to="/ingredients">Ingredients</Link>
+            <Link to="/education">Education</Link>
           </div>
+        </div>
 
           <div className="nav-item dropdown group">
             <span className="menu-text">Recipes</span>

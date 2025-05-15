@@ -1,7 +1,7 @@
 import CocktailCard from "./CocktailCard";
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import { useEffect, useState } from "react";
-
+import Feature from "./Feature";
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false); // Track if the component has loaded
 
@@ -29,6 +29,7 @@ const Home = () => {
 
   return (
     <div className={`masonry-container ${isLoaded ? "fade-in" : "fade-out"}`}>
+      <Feature/>
       <ResponsiveMasonry>
         <Masonry>
           <CocktailCard

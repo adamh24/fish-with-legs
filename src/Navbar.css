@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: space-between; /* Distribute space between nav-left, nav-title, and nav-right */
   width: 100%; /* Full width of the navbar */
-  font-family: Lora;
+  font-family: 'league-spartan';
 }
 
 .nav-title {
@@ -23,6 +23,7 @@
   position: absolute; /* Keeps the title centered */
   left: 50%; /* Start positioning from the center */
   transform: translateX(-50%); /* Adjust to center the title */
+  font-family: 'antonio';
 }
 
 .nav-title-container {
@@ -112,6 +113,8 @@
   display: block;
   transition: background 0.2s;
   width: max-content;
+  font-family: 'league-spartan', sans-serif; /* Ensure League Spartan is applied */
+
 }
 
 .dropdown-content a:hover {
@@ -172,6 +175,8 @@
 .menu-text {
   color: white; /* Make the links white */
   text-decoration: none; /* Remove text decoration */
+  font-family: 'league-spartan', sans-serif; /* Ensure League Spartan is applied */
+  font-weight: 400; /* Optional: Adjust font weight if needed */
 }
 
 .menu-text:hover, .search-icon:hover

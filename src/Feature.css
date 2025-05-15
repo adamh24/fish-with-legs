@@ -1,0 +1,47 @@
+
+.feature {
+
+    width: 90vw;
+    height: 30vh;
+    background-color: rgba(250, 250, 250, 0.184);
+    justify-self: center;
+    margin: 2em;
+    position: relative;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.border-image {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.square1 {
+    border: 1px solid white;
+    width: calc(90vw - 20px);
+    height: calc(30vh - 40px);
+
+    top: 20px;
+    left: 10px;
+
+    position: absolute;
+    justify-self: center;
+}
+
+.square2 {
+    border: 1px solid white;
+    width: calc(90vw - 40px);
+    height: calc(30vh - 20px);
+
+    left: 20px;
+    top: 10px;
+
+    position: absolute;
+    justify-self: center;
+
+}

@@ -27,7 +27,7 @@
   font-size: 48px;
   color: #F8F6F2;
   justify-self: center;
-  font-family: Lora;
+  font-family: 'league-spartan', sans-serif; /* Ensure League Spartan is applied */
 }
 
 .nav-items {
@@ -46,7 +46,7 @@
   margin-right: 15px;
   font-size: 32px;
   width: min-content;
-  font-family: Lora;
+  font-family: 'league-spartan', sans-serif; /* Ensure League Spartan is applied */
 }
 
 .grid-container {
