@@ -1,46 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { color } from "three/tsl";
-import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
-// https://www.npmjs.com/package/react-responsive-masonry
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-const cocktailImages = [
-  require("./assets/cocktail1.png"),
-  require("./assets/cocktail2.png"),
-  require("./assets/cocktail3.png"),
-  require("./assets/cocktail4.png"),
-  require("./assets/cocktail5.png"),
-  // require("./assets/cocktail6.png")
-];
+import Home from "./Home";
+import DaliMenu from "./Dali";
+import Cocktails from "./Cocktails";
+import Navigation from "./Navigation";
+import Nav2 from "./Nav2";
 
-const headings = [
-  "Refreshing Mojito", "Botanical Burst", "Classic Elegance",
-  "Long Floral Twist", "Green Zest", "Berry Bliss"
-];
-
-const CocktailCard = ({ image, title, style }) => (
-  <div style={{ ...styles.card, ...style, backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-    <div style={styles.overlay}></div>
-    <p style={styles.cardp}>{title}</p>
-  </div>
-);
-
-
-
-console.log("screen height:" + window.innerHeight);
+import "./App.css"; // Import the CSS file
 
 const App = () => {
 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
-  const [selectedNavItem, setSelectedNavItem] = useState("Home"); // Default selected item
-
-  const handleNavItemClick = (item) => {
-    setSelectedNavItem(item); // Update the selected item
-  };
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
 
 
   useEffect(() => {
@@ -59,172 +32,39 @@ const App = () => {
 
   return (
 
-    <div style={styles.container}>
-      <div style={styles.navbar}>
-        <p style={styles.navTitle}>Handle</p>
-        {isSmallScreen && (
-          <button style={styles.dropdownButton} onClick={toggleDropdown}>
-            ☰
-          </button>
-        )}
-        <div
-          style={{
-            ...styles.navItems,
-            display: isSmallScreen
-              ? isDropdownOpen
-                ? "flex"
-                : "none"
-              : "flex",
-          }}
-        >
-          {[
-            "Home",
-            "Cocktails",
-            "Modifiers",
-            "Sustainability",
-            "Ingredients",
-            "History",
-            "About",
-          ].map((item) => (
-            <button
-                  style={{
-                    ...styles.navp,
-                    backgroundColor: selectedNavItem === item ? "#4A2E1B" : "transparent", // Highlight selected item
-                    backgroundColor: "transparent", // Highlight selected item
+    <div className="main-container">
 
-                    // borderRadius: "5px", // Optional: Add rounded corners
-                    // padding: "5px 10px", // Optional: Add padding for better appearance
-                    border: "none", // Remove border
-                  }}
-                  key={item}
-                  onClick={() => handleNavItemClick(item)} // Update selected item on click
-                >              {item}
-            </button>
-          ))}
-        </div>
-      </div>
-      <div style={styles.masonryContainer}>
-        <ResponsiveMasonry>
-          <Masonry>
-              <CocktailCard image={cocktailImages[3]} title={headings[1]} style={{ width: '-webkit-fill-available', height: '60vh' }} /> {/* botanical */}
-              <CocktailCard image={cocktailImages[1]} title={headings[3]} style={{ width: '-webkit-fill-available', height: '40vh' }} /> {/* long floral */}
-              <CocktailCard image={cocktailImages[4]} title={headings[5]} style={{ height: '20vh', width: '-webkit-fill-available' }} /> {/* berry bliss */}
-              <div></div>
-              <CocktailCard image={cocktailImages[0]} title={headings[0]} style={{ width: '-webkit-fill-available', height: '30vh' }} /> {/* mojito */}
-              <CocktailCard image={cocktailImages[2]} title={headings[4]} style={{ width: '-webkit-fill-available', height: '50vh' }} /> {/* green zest */}
+      {/* seaweed background */}
+      <img src={require("./assets/seaweed.png")} alt="seaweed" style={{ position: 'absolute', bottom: '-124px', left: '-100px', height: 'auto', zIndex: 0 }} />
+      <img src={require("./assets/seaweed.png")} alt="seaweed" style={{ position: 'absolute', bottom: '-124px', right: '-100px', height: '80vh', zIndex: 0 }} />
 
-            </Masonry>
-        </ResponsiveMasonry>
-      </div>
-      
+      <Router>
+        
+        {/* <div className="navbar">
+          <p className="nav-title">Handle</p>
+          <Navigation/>
+        </div> */}
+
+        <Nav2/>
+
+        <Routes>
+          
+            <Route path="/" element={<Home />} />
+            <Route path="/cocktails" element={<Cocktails />} />
+            <Route path="/dali-menu" element={<DaliMenu />} />
+            {/* <Route path="/about" element={<About />} /> */}
+            {/* <Route path="/modifiers" element={<Modifiers />} />
+            <Route path="/ingredients" element={<Ingredients />} />
+            <Route path="/history" element={<History />} />
+            <Route path="/sustainability" element={<Sustainability />} />
+            <Route path="/contact" element={<Contact />} /> */}
+
+        </Routes>
+      </Router>
+     
     </div>
+
   );
-};
-
-const styles = {
-  container: {
-    backgroundColor: '#203F2A',
-    height: '100vh',
-  },
-  masonryContainer: {
-    paddingTop: '2vh',
-    paddingInline: '2vh',
-    backgroundColor: '#203F2A',
-
-  },
-  navbar: {
-    backgroundColor: '#5A3E2B',
-    paddingTop: 10,
-    paddingBottom: 10,
-    paddingHorizontal: 15,
-    position: 'relative',
-    zIndex: 1,
-    boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.3)', // Drop shadow
-
-  },
-  navTitle: {
-    fontSize: 48,
-    color: '#F8F6F2',
-    justifySelf: 'center',
-    fontFamily: 'Lora',
-    color: '#F8F6F2',
-
-    
-  },
-  navItems: {
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-evenly',
-    gap: 10,
-    marginTop: 10,
-    color: '#F8F6F2',
-    transition: 'max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-  },
-  navp: {
-    color: '#F8F6F2',
-    marginRight: 15,
-    fontSize: 24,
-    width: 'min-content',
-    fontFamily: 'Lora',
-
-  },
-  gridContainer: {
-    padding: 10,
-    gap: 10,
-  },
-  row: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    gap: 10,
-    marginTop: 10,
-  },
-  col: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    gap: 10,
-    marginTop: 10,
-  },
-  card: {
-    position: 'relative',
-    justifyContent: 'flex-end',
-    borderRadius: 10,
-    overflow: 'hidden',
-    marginBottom: 10,
-    display: 'flex',
-    flexDirection: 'column',
-    margin: 10,
-    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
-  },
-  overlay: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(32, 63, 42, 0.4)',
-  },
-  cardp: {
-    position: 'relative',
-    color: '#F8F6F2',
-    fontSize: 18,
-    padding: 10,
-    zIndex: 1,
-    fontFamily: 'Lora',
-    fontSize: 48,
-
-  },
-  dropdownButton: {
-    display: "flex", // Hidden by default
-    backgroundColor: "transparent",
-    border: "none",
-    color: "#F8F6F2",
-    fontSize: 50,
-    cursor: "pointer",
-    marginLeft: 10,
-  },
 };
 
 export default App;
