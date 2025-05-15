@@ -50,7 +50,7 @@ const Navigation = () => {
           <div className="nav-item dropdown group">
             <span>Recipes</span>
             <div className="dropdown-content">
-              <Link to="/recipe1">Recipe 1</Link>
+              <Link to="/cocktails">Cocktails</Link>
               <Link to="/recipe2">Recipe 2</Link>
             </div>
           </div>

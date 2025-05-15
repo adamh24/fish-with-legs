@@ -10,8 +10,13 @@ const Cocktails = () => {
   const [filteredCocktails, setFilteredCocktails] = useState(cocktailData); // Filtered items
   const [isAnimating, setIsAnimating] = useState(false); // Animation state
   const [animateType, setAnimateType] = useState("in"); // Animation direction
+  const [isLoaded, setIsLoaded] = useState(false); // Track if the component has loaded
 
   useEffect(() => {
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 100); // Delay to ensure smooth animation
+
     if (filteredCocktails !== cocktailData) {
         // Trigger the animation only when the filter changes
         setTimeout(() => {
@@ -52,7 +57,7 @@ const Cocktails = () => {
   };
 
   return (
-    <div className="main-container">
+    <div className={`masonry-container ${isLoaded ? "fade-in" : "fade-out"}`}>
       {/* Filter Buttons */}
         <div className="filter-buttons">
           <select
