@@ -1,13 +1,12 @@
 .main-container {
   background-color: #203F2A;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
 .masonry-container {
   padding-top: 2vh;
   padding-inline: 2vh;
-  background-color: #203F2A;
+  /* background-color: #203F2A; */
   transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth fade-in and slide-up */
   transform: translateY(20px); /* Start slightly below */
   opacity: 0; /* Start fully transparent */
