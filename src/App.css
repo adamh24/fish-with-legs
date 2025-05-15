@@ -8,6 +8,10 @@
   padding-top: 2vh;
   padding-inline: 2vh;
   background-color: #203F2A;
+  transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth fade-in and slide-up */
+  transform: translateY(20px); /* Start slightly below */
+  opacity: 0; /* Start fully transparent */
+
 }
 
 .navbar {
@@ -133,4 +137,14 @@
   border-radius: 5px;
   cursor: pointer;
   /* font-size: 16px; */
+}
+
+.masonry-container.fade-in {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to original position */
+}
+
+.masonry-container.fade-out {
+  opacity: 0; /* Fully transparent */
+  transform: translateY(20px); /* Slightly below */
 }
