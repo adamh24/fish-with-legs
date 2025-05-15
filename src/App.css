@@ -91,7 +91,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(32, 63, 42, 0.4);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%, /* Fully transparent at the top */
+    rgba(0, 0, 0, 0.6) 100% /* Darker at the bottom */
+  );
 }
 
 .cardp {
