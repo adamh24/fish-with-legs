@@ -25,6 +25,16 @@
     left: 50%; /* Start positioning from the center */
     transform: translateX(-50%); /* Adjust to center the title */
   }
+
+  .nav-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the title horizontally */
+    border-bottom: 2px solid white; /* Add a solid white border at the bottom */
+    padding-bottom: 0.5rem; /* Add some spacing between the title and the border */
+
+
+  }
   
   .nav-right {
     display: flex;

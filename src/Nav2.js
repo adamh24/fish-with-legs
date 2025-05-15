@@ -65,7 +65,9 @@ const Navigation = () => {
         </div>
         
 
-        <Link to="/" className="nav-title">FISH-with-LEGS</Link>
+        <div className='nav-title-container'>
+          <Link to="/" className="nav-title">FISH-with-LEGS</Link>
+        </div>
 
         {!searchActive && (
           <div className="nav-right">
