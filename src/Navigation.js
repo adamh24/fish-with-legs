@@ -14,9 +14,11 @@ const Navigation = () => {
 
   const handleSearch = (e) => {
     setSearchValue(e.target.value);
+
     const matches = cocktails.filter(cocktail =>
-      cocktail.name.toLowerCase().includes(e.target.value.toLowerCase())
+      cocktail.title && cocktail.title.toLowerCase().includes(e.target.value.toLowerCase())
     );
+    console.log(matches);
     setSuggestions(matches);
   };
 
@@ -140,7 +142,7 @@ const Navigation = () => {
             <div className="suggestions">
               {suggestions.map((item, index) => (
                 <Link key={index} to={`/cocktail/${item.id}`} className="suggestion-item">
-                  {item.name}
+                  {item.title}
                 </Link>
               ))}
             </div>
