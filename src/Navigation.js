@@ -19,6 +19,10 @@ const Navigation = () => {
       cocktail.title && cocktail.title.toLowerCase().includes(e.target.value.toLowerCase())
     );
     console.log(matches);
+    if(matches.length === cocktails.length) {
+      setSuggestions([]);
+      return;
+    }
     setSuggestions(matches);
   };
 
