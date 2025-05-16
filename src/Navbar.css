@@ -245,3 +245,15 @@ color: rgb(188, 194, 184);
     justify-content: flex-end;
   }
 }
+
+.cancel-icon {
+  font-size: 1.5rem;
+  color: #F8F6F2;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  align-self: center;
+}
+
+.cancel-icon:hover {
+  color: rgb(188, 194, 184);
+}

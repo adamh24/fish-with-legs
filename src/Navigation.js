@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FiSearch, FiMenu } from 'react-icons/fi';
+import { FiSearch, FiMenu, FiX } from 'react-icons/fi'; // Import FiX for the cancel button
 import cocktails from './data/cocktails.json';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
@@ -10,6 +10,7 @@ const Navigation = () => {
   const [searchValue, setSearchValue] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const inputRef = useRef();
+  const searchBarRef = useRef();
 
   const handleSearch = (e) => {
     setSearchValue(e.target.value);
@@ -25,35 +26,67 @@ const Navigation = () => {
     }
   };
 
+  const handleCancelSearch = () => {
+    setSearchActive(false);
+    setSearchValue('');
+    setSuggestions([]);
+  };
+
+  const handleEscapeKey = (e) => {
+    if (e.key === 'Escape') {
+      handleCancelSearch();
+    }
+  };
+
+  const handleClickOutside = (e) => {
+    if (searchBarRef.current && !searchBarRef.current.contains(e.target)) {
+      handleCancelSearch();
+    }
+  };
+
+  useEffect(() => {
+    if (searchActive) {
+      document.addEventListener('keydown', handleEscapeKey);
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('keydown', handleEscapeKey);
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscapeKey);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [searchActive]);
+
   return (
     <header className={`navbar ${searchActive ? 'search-mode' : ''}`}>
       <div className="navbar-container">
 
         <div className='nav-left'>
-
-        <div className="menu-dropdown dropdown group">
-          <FiMenu className="menu-icon" />
-          <div className="dropdown-content">
-            <div className="nav-item dropdown menu-group">
-              <span className="menu-text">Recipes</span>
-              <div className="dropdown-menu-content">
-                <Link to="/cocktails">Cocktails</Link>
-                <Link to="/recipe2">Recipe 2</Link>
+          <div className="menu-dropdown dropdown group">
+            <FiMenu className="menu-icon" />
+            <div className="dropdown-content">
+              <div className="nav-item dropdown menu-group">
+                <span className="menu-text">Recipes</span>
+                <div className="dropdown-menu-content">
+                  <Link to="/cocktails">Cocktails</Link>
+                  <Link to="/recipe2">Recipe 2</Link>
+                </div>
               </div>
-            </div>
-            <div className="nav-item dropdown menu-group">
-              <span className="menu-text">Menus</span>
-              <div className="dropdown-menu-content">
-                <Link to="/dali-menu">Dali Menu</Link>
-                <Link to="/event-menu">Event Menu</Link>
+              <div className="nav-item dropdown menu-group">
+                <span className="menu-text">Menus</span>
+                <div className="dropdown-menu-content">
+                  <Link to="/dali-menu">Dali Menu</Link>
+                  <Link to="/event-menu">Event Menu</Link>
+                </div>
               </div>
-            </div>
-            <Link to="/sustainability">Sustainability</Link>
-            <Link to="/about">About</Link>
-            <Link to="/history">History</Link>
-            <Link to="/contact">Contact</Link>
-            <Link to="/ingredients">Ingredients</Link>
-            <Link to="/education">Education</Link>
+              <Link to="/sustainability">Sustainability</Link>
+              <Link to="/about">About</Link>
+              <Link to="/history">History</Link>
+              <Link to="/contact">Contact</Link>
+              <Link to="/ingredients">Ingredients</Link>
+              <Link to="/education">Education</Link>
           </div>
         </div>
 
@@ -73,7 +106,6 @@ const Navigation = () => {
             </div>
           </div>
         </div>
-        
 
         <div className='nav-title-container'>
           <Link to="/" className="nav-title">FISH-with-LEGS</Link>
@@ -81,9 +113,8 @@ const Navigation = () => {
 
         {!searchActive && (
           <div className="nav-right">
-
             <Link to="/about" className="menu-text">About</Link>
-            <Link to="/contact"  className="menu-text">Contact</Link>
+            <Link to="/contact" className="menu-text">Contact</Link>
             <FiSearch className="search-icon" onClick={() => setSearchActive(true)} />
           </div>
         )}
@@ -94,6 +125,7 @@ const Navigation = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="search-bar"
+            ref={searchBarRef}
           >
             <input
               ref={inputRef}
@@ -104,6 +136,7 @@ const Navigation = () => {
               placeholder="Search cocktails..."
               autoFocus
             />
+            <FiX className="cancel-icon" onClick={handleCancelSearch} />
             <div className="suggestions">
               {suggestions.map((item, index) => (
                 <Link key={index} to={`/cocktail/${item.id}`} className="suggestion-item">
