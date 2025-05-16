@@ -114,12 +114,36 @@
   transition: background 0.2s;
   width: max-content;
   font-family: 'league-spartan', sans-serif; /* Ensure League Spartan is applied */
-
 }
 
 .dropdown-content a:hover {
   color: rgb(188, 194, 184); 
 }
+
+.dropdown-menu-content {
+  opacity: 0; /* Start fully transparent */
+  transform: translateY(-10px); /* Start slightly above */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade-in and slide-down */
+  display: block; /* Ensure it's always block for animation */
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #365f4d;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  z-index: 20;
+  pointer-events: none; /* Prevent interaction when hidden */
+}
+
+.menu-group:hover .dropdown-menu-content {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to original position */
+  pointer-events: auto; /* Allow interaction when visible */
+
+}
+
+
 
 .search-bar {
   position: absolute;

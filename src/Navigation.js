@@ -34,16 +34,16 @@ const Navigation = () => {
         <div className="menu-dropdown dropdown group">
           <FiMenu className="menu-icon" />
           <div className="dropdown-content">
-            <div className="nav-item dropdown group">
+            <div className="nav-item dropdown menu-group">
               <span className="menu-text">Recipes</span>
-              <div className="dropdown-content">
+              <div className="dropdown-menu-content">
                 <Link to="/cocktails">Cocktails</Link>
                 <Link to="/recipe2">Recipe 2</Link>
               </div>
             </div>
-            <div className="nav-item dropdown group">
+            <div className="nav-item dropdown menu-group">
               <span className="menu-text">Menus</span>
-              <div className="dropdown-content">
+              <div className="dropdown-menu-content">
                 <Link to="/dali-menu">Dali Menu</Link>
                 <Link to="/event-menu">Event Menu</Link>
               </div>
