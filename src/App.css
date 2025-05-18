@@ -10,7 +10,16 @@
   transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth fade-in and slide-up */
   transform: translateY(20px); /* Start slightly below */
   opacity: 0; /* Start fully transparent */
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 
+}
+
+.masonry-container > div{
+  /* margin: 5px; */
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  aspect-ratio: 4/1;
 }
 
 .navbar {
