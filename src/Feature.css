@@ -1,8 +1,8 @@
 
 .feature {
 
-    width: 90vw;
-    height: 30vh;
+    width: 100%;
+    height: 35vh;
     background-color: rgba(250, 250, 250, 0.184);
     justify-self: center;
     margin: 2em;
@@ -17,14 +17,12 @@
     object-fit: fill;
     width: 100%;
     height: 100%;
-
-
 }
 
 .square1 {
     border: 1px solid white;
-    width: calc(90vw - 20px);
-    height: calc(30vh - 40px);
+    width: calc(100% - 20px);
+    height: calc(35vh - 40px);
 
     top: 20px;
     left: 10px;
@@ -35,8 +33,8 @@
 
 .square2 {
     border: 1px solid white;
-    width: calc(90vw - 40px);
-    height: calc(30vh - 20px);
+    width: calc(100% - 40px);
+    height: calc(35vh - 20px);
 
     left: 20px;
     top: 10px;

@@ -2,6 +2,8 @@ import CocktailCard from "./CocktailCard";
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import { useEffect, useState } from "react";
 import Feature from "./Feature";
+import './Home.css';
+
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false); // Track if the component has loaded
 
@@ -12,8 +14,8 @@ const Home = () => {
       require("./assets/cocktail3.png"),
       require("./assets/cocktail4.png"),
       require("./assets/cocktail5.png"),
-      // require("./assets/cocktail6.png")
     ];
+
 
   const headings = [
     "Taste of the Avanteguard Menu", "Pistacio Burboun Fat Wash", "Classic Elegance",
@@ -29,7 +31,10 @@ const Home = () => {
 
   return (
     <div className={`masonry-container ${isLoaded ? "fade-in" : "fade-out"}`}>
-      <Feature/>
+      <div className="feature-container">
+        <img src={require("./assets/beer.png")} alt="Beer with logo" className="feature-image" />
+        <Feature/>
+      </div>
       <ResponsiveMasonry>
         <Masonry>
           <CocktailCard
