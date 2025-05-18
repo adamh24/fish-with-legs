@@ -31,10 +31,19 @@ const Home = () => {
 
   return (
     <div className={`masonry-container ${isLoaded ? "fade-in" : "fade-out"}`}>
+
       <div className="feature-container">
         <img src={require("./assets/beer.png")} alt="Beer with logo" className="feature-image" />
         <Feature/>
       </div>
+
+      <div style={{width: "100%", height: "80vh", display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "5vh"}}>
+        <div style={{border: '5px solid white', width: '20vw', height: '20vw'}}></div>
+        <div style={{border: '5px solid white', width: '20vw', height: '20vw'}}></div>
+        <div style={{border: '5px solid white', width: '20vw', height: '20vw'}}></div>
+
+      </div>
+
       <ResponsiveMasonry>
         <Masonry>
           <CocktailCard

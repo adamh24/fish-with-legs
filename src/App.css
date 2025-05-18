@@ -1,6 +1,12 @@
 .main-container {
   background-color: #203F2A;
   min-height: 100vh;
+  overflow: hidden;
+}
+
+html,
+body {
+  overflow: hidden;
 }
 
 .masonry-container {
@@ -12,6 +18,8 @@
   opacity: 0; /* Start fully transparent */
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth; /* Smooth scrolling */
+  height: 90vh;
 
 }
 
