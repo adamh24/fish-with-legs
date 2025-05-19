@@ -1,0 +1,56 @@
+.cocktail-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    z-index: 4;
+    position: relative;
+    color: white;
+    font-family: 'League Spartan', sans-serif;
+  }
+  
+  .cocktail-image img {
+    width: 100%;
+    height: 20vh;
+    margin-bottom: 20px;
+  }
+  
+  .cocktail-details {
+    width: 100vw;
+    max-width: 800px;
+    text-align: center;
+  }
+  
+  .cocktail-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .cocktail-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .cocktail-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .cocktail-ingredients,
+  .cocktail-instructions {
+    width: 45%;
+  }
+  
+  .cocktail-ingredients ul,
+  .cocktail-instructions ol {
+    text-align: left;
+  }
+  
+  .cocktail-footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 1rem;
+    color: #b5b5b5;
+  }

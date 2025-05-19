@@ -4,14 +4,57 @@
       "title": "Espresso Martini",
       "menu": "Classic",
       "flavors": ["Espresso", "Vodka", "Coffee Liqueur"],
-      "image": "./assets/cocktail1.png"
+      "image": "./assets/cocktail1.png",
+      "description": "A rich and creamy cocktail with a kick of caffeine, perfect for coffee lovers.",
+      "ingredients": [
+        "2 oz Vodka",
+        "1 oz Coffee Liqueur",
+        "1 oz Fresh Espresso",
+        "0.5 oz Simple Syrup"
+      ],
+      "instructions": [
+        "Add all ingredients to a shaker with ice.",
+        "Shake vigorously for 15-20 seconds.",
+        "Strain into a chilled martini glass.",
+        "Garnish with coffee beans."
+      ],
+      "pairings": [
+        "Chocolate desserts",
+        "Cheesecake",
+        "Tiramisu"
+      ],
+      "notes": [
+        "Use freshly brewed espresso for the best flavor.",
+        "Adjust the sweetness with simple syrup to taste."
+      ]
     },
     {
       "id": 2,
       "title": "Pistachio Spritz",
       "menu": "Botanical",
       "flavors": ["Pistachio", "Prosecco", "Soda Water"],
-      "image": "./assets/cocktail2.png"
+      "image": "./assets/cocktail2.png",
+      "description": "A refreshing spritz with a nutty twist, perfect for summer afternoons.",
+      "ingredients": [
+        "1 oz Pistachio Syrup",
+        "3 oz Prosecco",
+        "1 oz Soda Water",
+        "Fresh Mint Leaves"
+      ],
+      "instructions": [
+        "Fill a glass with ice.",
+        "Add pistachio syrup and top with Prosecco and soda water.",
+        "Garnish with fresh mint leaves."
+      ],
+      "pairings": [
+        "Salty snacks",
+        "Cheese platter",
+        "Fruit salad"
+      ],
+      "notes": [
+        "For a stronger pistachio flavor, use pistachio-infused gin.",
+        "Experiment with different herbs for garnish."
+      ]
     },
     {
       "id": 3,
@@ -40,6 +83,34 @@
       "menu": "Dali",
       "flavors": ["Amarula", "Sweet Vermouth", "Cacao Bitters"],
       "image": "./assets/cocktail5.png"
+    },
+    {
+      "id": 7,
+      "title": "Jasmine and Peach Martini",
+      "menu": "Dali",
+      "flavors": ["Peach", "Jasmine", "Citrus"],
+      "image": "./assets/cocktail5.png",
+      "description": "A floral and fruity cocktail that combines the sweetness of peach with the delicate aroma of jasmine.",
+      "ingredients": [
+        "2 oz Vodka",
+        "1 oz Peach Liqueur",
+        "0.5 oz Jasmine Syrup",
+        "0.5 oz Fresh Lemon Juice"
+      ],
+      "instructions": [
+        "Add all ingredients to a shaker with ice.",
+        "Shake well and strain into a chilled martini glass.",
+        "Garnish with a peach slice and jasmine flower."
+      ],
+      "pairings": [
+        "Light salads",
+        "Grilled chicken",
+        "Cheese platter"
+      ],
+      "notes": [
+        "Use fresh jasmine flowers for garnish if available.",
+        "Adjust the sweetness with more or less jasmine syrup."
+      ]
     }
     
   ]

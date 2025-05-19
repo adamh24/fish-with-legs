@@ -7,6 +7,7 @@ import Home from "./Home";
 import DaliMenu from "./dali";
 import Cocktails from "./Cocktails";
 import Navigation from "./Navigation";
+import CocktailPage from "./CocktailPage";
 
 import "./App.css"; // Import the CSS file
 
@@ -45,6 +46,7 @@ const App = () => {
           
             <Route path="/" element={<Home />} />
             <Route path="/cocktails" element={<Cocktails />} />
+            <Route path="/cocktail/:title" element={<CocktailPage />} />
             <Route path="/dali-menu" element={<DaliMenu />} />
             {/* <Route path="/about" element={<About />} /> */}
             {/* <Route path="/modifiers" element={<Modifiers />} />

@@ -73,7 +73,7 @@ const Cocktails = () => {
               className="filter-select"
               onChange={(e) => handleFilterChange({ ...filter, flavors: e.target.value })}
               >
-              <option value="">Filter by flavors</option>
+              <option value="">Filter by Ingredients</option>
               <option value="Espresso">Espresso</option>
               <option value="Vodka">Vodka</option>
               <option value="Coffee Liqueur">Coffee Liqueur</option>
