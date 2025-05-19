@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Feature from "./Feature";
 import './Home.css';
 import ArticleFeatures from "./ArticleFeatures";
+import HomeFeature from "./HomeFeature";
 
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false); // Track if the component has loaded
@@ -33,10 +34,7 @@ const Home = () => {
   return (
     <div className={`masonry-container ${isLoaded ? "fade-in" : "fade-out"}`}>
 
-      <div className="feature-container">
-        <img src={require("./assets/beer.png")} alt="Beer with logo" className="feature-image" />
-        <Feature/>
-      </div>
+      <HomeFeature/>
 
       <ArticleFeatures/>
 
