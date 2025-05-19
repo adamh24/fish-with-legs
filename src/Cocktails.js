@@ -6,7 +6,7 @@ import "./App.css"; // Import the CSS file
 
 
 const Cocktails = () => {
-  const [filter, setFilter] = useState({ menu: "", ingredient: "" }); // Filter state
+  const [filter, setFilter] = useState({ menu: "", flavors: "" }); // Filter state
   const [filteredCocktails, setFilteredCocktails] = useState(cocktailData); // Filtered items
   const [isAnimating, setIsAnimating] = useState(false); // Animation state
   const [animateType, setAnimateType] = useState("in"); // Animation direction
@@ -35,10 +35,10 @@ const Cocktails = () => {
     setTimeout(() => {
       const newFilteredCocktails = cocktailData.filter((cocktail) => {
         const matchesMenu = newFilter.menu ? cocktail.menu === newFilter.menu : true;
-        const matchesIngredient = newFilter.ingredient
-          ? cocktail.ingredients.includes(newFilter.ingredient)
+        const matchesflavors = newFilter.flavors
+          ? cocktail.flavorss.includes(newFilter.flavors)
           : true;
-        return matchesMenu && matchesIngredient;
+        return matchesMenu && matchesflavors;
       });
 
       setFilter(newFilter); // Update the filter state
@@ -71,9 +71,9 @@ const Cocktails = () => {
               </select>
               <select
               className="filter-select"
-              onChange={(e) => handleFilterChange({ ...filter, ingredient: e.target.value })}
+              onChange={(e) => handleFilterChange({ ...filter, flavors: e.target.value })}
               >
-              <option value="">Filter by Ingredient</option>
+              <option value="">Filter by flavors</option>
               <option value="Espresso">Espresso</option>
               <option value="Vodka">Vodka</option>
               <option value="Coffee Liqueur">Coffee Liqueur</option>
@@ -84,7 +84,7 @@ const Cocktails = () => {
           </select>
           <button
             className="clear-button"
-            onClick={() => setFilter({ menu: "", ingredient: "" })}
+            onClick={() => setFilter({ menu: "", flavors: "" })}
           >
             Clear Filters
           </button>
