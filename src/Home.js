@@ -3,6 +3,7 @@ import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import { useEffect, useState } from "react";
 import Feature from "./Feature";
 import './Home.css';
+import ArticleFeatures from "./ArticleFeatures";
 
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false); // Track if the component has loaded
@@ -37,6 +38,8 @@ const Home = () => {
         <Feature/>
       </div>
 
+      <ArticleFeatures/>
+      
       <div style={{width: "100%", height: "80vh", display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "5vh"}}>
         <div style={{border: '5px solid white', width: '20vw', height: '20vw'}}></div>
         <div style={{border: '5px solid white', width: '20vw', height: '20vw'}}></div>
