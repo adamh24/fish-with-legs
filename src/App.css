@@ -10,14 +10,15 @@ body {
 }
 
 .image-button {
-  width: 30vw;
-  height: 40vw;
+  width: 33%;
+  height: 65vh;
   background-size: cover;
   background-position: center;
   border: none;
   cursor: pointer;
   transition: transform 0.3s ease; /* Smooth zoom-in effect */
   position: relative; /* Ensure the gradient overlay is positioned correctly */
+  margin-inline: 1.2em;
 }
 
 .image-button::before {

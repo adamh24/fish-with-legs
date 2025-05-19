@@ -3,23 +3,27 @@ import ImageButton from "./ImageButton";
 
 const ArticleFeatures = () => {
     return (
-        <div className="article-features" style={{width: "100%", height: "80vh", display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "5vh"}}>
+        <div className="article-features">
             
             <ImageButton
-                imageSrc={require("./assets/beer.png")}
-                altText="Beer with logo"
+                imageSrc={require("./assets/citrus.jpg")}
+                altText="Citrus Sustainability"
                 onClick={() => console.log("Beer button clicked")}
+                title="Citrus Sustainability"
             >
             </ImageButton>
             <ImageButton
-                imageSrc={require("./assets/beer.png")}
-                altText="Beer with logo"
-                onClick={() => console.log("Beer button clicked")}
+                imageSrc={require("./assets/cotd.png")}
+                altText="Cocktail of the Day"
+                onClick={() => console.log("cocktail of the day button clicked")}
+                title="Cocktail of the Day"
+
             />
             <ImageButton
-                imageSrc={require("./assets/beer.png")}
-                altText="Beer with logo"
-                onClick={() => console.log("Beer button clicked")}
+                imageSrc={require("./assets/adam1.png")}
+                altText="Adam with Cider"
+                onClick={() => console.log("Next steps button clicked")}
+                title="Next Steps"
             />
         </div>
     );

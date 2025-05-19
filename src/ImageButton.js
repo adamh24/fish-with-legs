@@ -1,4 +1,4 @@
-const ImageButton = ({ imageSrc, altText, onClick }) => {
+const ImageButton = ({ imageSrc, altText, onClick, title }) => {
     return (
       <button
         className="image-button"
@@ -8,7 +8,7 @@ const ImageButton = ({ imageSrc, altText, onClick }) => {
         }}
         aria-label={altText} // For accessibility
       >
-        <span className="image-button-title">Title</span>
+        <span className="image-button-title">{title}</span>
       </button>
     );
   };
