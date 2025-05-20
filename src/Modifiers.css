@@ -1,0 +1,56 @@
+.subtitle {
+    color:white;
+    font-size: xx-large;
+    font-family: 'antonio';
+}
+
+.title-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin: 1em
+}
+
+.modifier-image {
+    width: 49vw;
+    height: 35vh;
+    background-size: cover;
+    background-position: center;
+}
+.modifier-card {
+    z-index: 4;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    height: 40vh;
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+.modifiers-title {
+    color: "#555";
+    font-family: 'League Spartan', sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+
+}
+
+.modifiers-description {
+    color: "#555";
+    font-family: 'League Spartan', sans-serif;
+}
+
+.modifiers-deck {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.text-block {
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
