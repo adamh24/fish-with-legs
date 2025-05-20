@@ -10,6 +10,7 @@ import Navigation from "./Navigation";
 import CocktailPage from "./CocktailPage";
 
 import "./App.css"; // Import the CSS file
+import Modifiers from "./Modifiers";
 
 const App = () => {
 
@@ -48,6 +49,7 @@ const App = () => {
             <Route path="/cocktails" element={<Cocktails />} />
             <Route path="/cocktail/:title" element={<CocktailPage />} />
             <Route path="/dali-menu" element={<DaliMenu />} />
+            <Route path="/modifiers" element={<Modifiers/>} />
             {/* <Route path="/about" element={<About />} /> */}
             {/* <Route path="/modifiers" element={<Modifiers />} />
             <Route path="/ingredients" element={<Ingredients />} />
