@@ -2,6 +2,7 @@
     color:white;
     font-size: xx-large;
     font-family: 'antonio';
+    z-index: 5;
 }
 
 .title-container {
