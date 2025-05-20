@@ -1,6 +1,14 @@
+import { useNavigate } from 'react-router';
 import './Modifiers.css';
 import modifierdata from './data/modifiers.json';
+
 const Modifiers = () => {
+    const navigate = useNavigate();
+
+    const handleCardClick = (title) => {
+        navigate(`/modifier/${title}`);
+
+    }
 
 
 
@@ -12,7 +20,7 @@ const Modifiers = () => {
 
             <div className="modifiers-deck">
                 {modifierdata.map((modifier) => (
-                    <div className="modifier-card">
+                    <div className="modifier-card" onClick={() => handleCardClick(modifier.title)}>
                         <div 
                         className="modifier-image"
                         style={{
