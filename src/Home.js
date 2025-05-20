@@ -33,6 +33,7 @@ const Home = () => {
   }, []);
 
   return (
+  
     <div className={`masonry-container ${isLoaded ? "fade-in" : "fade-out"}`}>
 
       <HomeFeature/>
