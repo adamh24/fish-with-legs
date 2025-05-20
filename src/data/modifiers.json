@@ -52,6 +52,60 @@
             "Squirt with purpose!"
         ]
 
+    },
+    {
+        "id": 3,
+        "title": "snd Chocolate Raspberry Foam",
+        "flavors": ["Chocolate", "Raspberry", "Foam"],
+        "image": "./assets/cocktail1.png",
+        "description": "Chocolaty, Raspberryey foam like think",
+        "ingredients": [
+            "Chocolate",
+            "Raspberry",
+            "Foam"
+        ],
+        "instructions": [
+            "Add all ingredients to a squirty can.",
+            "Shake vigorously for 15-20 seconds.",
+            "chill for time.",
+            "SQUIRT."
+        ],
+        "pairings": [
+            "Chocolate desserts",
+            "Cheesecake",
+            "Breasts"
+        ],
+        "notes": [
+            "Squirt with purpose!"
+        ]
+
+    },
+    {
+        "id": 4,
+        "title": "snd Chocolate Raspberry Foam",
+        "flavors": ["Chocolate", "Raspberry", "Foam"],
+        "image": "./assets/cocktail1.png",
+        "description": "Chocolaty, Raspberryey foam like think",
+        "ingredients": [
+            "Chocolate",
+            "Raspberry",
+            "Foam"
+        ],
+        "instructions": [
+            "Add all ingredients to a squirty can.",
+            "Shake vigorously for 15-20 seconds.",
+            "chill for time.",
+            "SQUIRT."
+        ],
+        "pairings": [
+            "Chocolate desserts",
+            "Cheesecake",
+            "Breasts"
+        ],
+        "notes": [
+            "Squirt with purpose!"
+        ]
+
     }
 
 ]
