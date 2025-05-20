@@ -6,7 +6,6 @@
 }
 
 .title-container {
-    width: 100vw;
     display: flex;
     justify-content: center;
     margin: 1em

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router';
 import './Modifiers.css';
-import modifierdata from './data/modifiers.json';
+import modifierdata from './data/cat-mods.json';
 
 const Modifiers = () => {
     const navigate = useNavigate();
