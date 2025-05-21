@@ -8,6 +8,7 @@ import DaliMenu from "./dali";
 import Cocktails from "./Cocktails";
 import Navigation from "./Navigation";
 import CocktailPage from "./CocktailPage";
+import Footer from "./Footer";
 
 import "./App.css"; // Import the CSS file
 import Modifiers from "./Modifiers";
@@ -60,6 +61,8 @@ const App = () => {
             <Route path="/contact" element={<Contact />} /> */}
 
         </Routes>
+
+        {/* <Footer/> */}
       </Router>
      
     </div>
