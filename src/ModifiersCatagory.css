@@ -35,7 +35,7 @@
     align-items: center;
     justify-content: flex-end;
     overflow: hidden;
-    margin: 8px;
+    margin: 4px;
     border-radius: 1em;
     transition: transform 0.3s ease;
 }
@@ -47,7 +47,7 @@
 .text-block{
     display: flex;
     margin-left: 3em;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     justify-content: center;
 }
