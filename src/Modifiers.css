@@ -71,3 +71,18 @@
     align-items: center;
     justify-content: center;
 }
+
+.modifiers-page {
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth fade-in and slide-up */
+    transform: translateY(20px);
+}
+
+.modifiers-page.fade-in {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to original position */
+}
+
+.modifiers-page.fade-out {
+  opacity: 0; /* Fully transparent */
+  transform: translateY(20px); /* Slightly below */
+}
