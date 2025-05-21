@@ -1,0 +1,80 @@
+.catagory-page {
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth fade-in and slide-up */
+    transform: translateY(20px);
+}
+
+.catagory-page.fade-in {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to original position */
+}
+
+.catagory-page.fade-out {
+  opacity: 0; /* Fully transparent */
+  transform: translateY(20px); /* Slightly below */
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    margin: 1em
+}
+
+.subtitle {
+    color:white;
+    font-size: xx-large;
+    font-family: 'antonio';
+    z-index: 5
+}
+
+.modifiers-card {
+    width: 98vw;
+    height: 20vh;
+    background-color: white;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    margin: 8px;
+    border-radius: 1em;
+    transition: transform 0.3s ease;
+}
+
+.modifiers-card:hover{
+    transform: scale(1.05);
+}
+
+.text-block{
+    display: flex;
+    margin-left: 3em;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modifiers-title {
+    color: #555;
+    font-family: 'League Spartan', sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.modifiers-discription {
+    color: #555;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.modifier-image {
+    width: 25vw;
+    height: 35vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.modifiers-deck {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
