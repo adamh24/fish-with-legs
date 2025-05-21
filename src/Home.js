@@ -5,6 +5,7 @@ import Feature from "./Feature";
 import './Home.css';
 import ArticleFeatures from "./ArticleFeatures";
 import HomeFeature from "./HomeFeature";
+import Footer from "./Footer";
 
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false); // Track if the component has loaded
@@ -32,6 +33,7 @@ const Home = () => {
   }, []);
 
   return (
+  
     <div className={`masonry-container ${isLoaded ? "fade-in" : "fade-out"}`}>
 
       <HomeFeature/>
@@ -69,6 +71,7 @@ const Home = () => {
           />
         </Masonry>
       </ResponsiveMasonry>
+      <Footer/>
     </div>
   );
 }
