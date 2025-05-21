@@ -25,14 +25,21 @@ return (
                 <span className="subtitle">{catagory}</span>
             </div>
 
-            <div className="catagory-image">
+            <div className="modifiers-deck">
                         
                 {subModifiers.map((modifier) => (
 
-                    <div>
-                        <div className="modifier-title">{modifier.title}</div>
-                        <div >{modifier.image}</div>
-                    </div>
+                        <div className="modifiers-card">
+                            <div className="text-block">
+                                <span className="modifiers-title">{modifier.title}</span>
+                                <span className="modifiers-discription">{modifier.breif}</span>
+                            </div>
+                            <div 
+                            className="modifier-image"
+                            style={{
+                             backgroundImage: `url(${require(`${modifier.image}`)})`
+                            }}></div>
+                        </div>
                     
               ))}   
             </div>

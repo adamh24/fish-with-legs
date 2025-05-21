@@ -28,17 +28,17 @@ const Modifiers = () => {
                 <span className="subtitle">Modifiers</span>
             </div>
 
-            <div className="modifiers-deck">
+            <div className="catagory-deck">
                 {modifierdata.map((modifier) => (
-                    <div className="modifier-card" onClick={() => handleCardClick(modifier.title)}>
+                    <div className="catagory-card" onClick={() => handleCardClick(modifier.title)}>
                         <div 
-                        className="modifier-image"
+                        className="catagory-image"
                         style={{
                             backgroundImage: `url(${require(`${modifier.image}`)})`
                         }}></div>
                         <div className="text-block">
-                            <span className="modifiers-title">{modifier.title}</span>
-                            <span className="modifiers-description">{modifier.description}</span>
+                            <span className="catagory-title">{modifier.title}</span>
+                            <span className="catagory-description">{modifier.description}</span>
                         </div>
                     </div>
                 ))

@@ -11,14 +11,14 @@
     margin: 1em
 }
 
-.modifier-image {
+.catagory-image {
     width: 49vw;
     height: 35vh;
     background-size: cover;
     background-position: center;
 }
 
-.modifier-card {
+.catagory-card {
     width: 47vw; /* Adjust the width of the cards */
     height: 36vh; /* Maintain a 4:3 aspect ratio */
     z-index: 4;
@@ -35,11 +35,11 @@
 }
 
 
-.modifier-card:hover {
+.catagory-card:hover {
     transform: scale(1.05); /* Add a zoom effect on hover */
 }
 
-.modifiers-title {
+.catagory-title {
     color: #555;
     font-family: 'League Spartan', sans-serif;
     font-size: x-large;
@@ -48,12 +48,12 @@
     margin-bottom: 10px;
 }
 
-.modifiers-description {
+.catagory-description {
     color: "#555";
     font-family: 'League Spartan', sans-serif;
 }
 
-.modifiers-deck {
+.catagory-deck {
     display: grid; /* Use CSS Grid for layout */
     grid-template-columns: repeat(2, 1fr); /* Create 2 columns of equal width */
     gap: 10px; /* Add spacing between cards */
