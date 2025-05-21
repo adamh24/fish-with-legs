@@ -77,7 +77,7 @@ const Navigation = () => {
                 <span className="menu-text">Recipes</span>
                 <div className="dropdown-menu-content">
                   <Link to="/cocktails">Cocktails</Link>
-                  <Link to="/recipe2">Recipe 2</Link>
+                  <Link to="/modifiers">Modifiers</Link>
                 </div>
               </div>
               <div className="nav-item dropdown menu-group">
@@ -100,7 +100,7 @@ const Navigation = () => {
             <span className="menu-text">Recipes</span>
             <div className="dropdown-content">
               <Link to="/cocktails">Cocktails</Link>
-              <Link to="/recipe2">Recipe 2</Link>
+              <Link to="/modifiers">Modifiers</Link>
             </div>
           </div>
 
