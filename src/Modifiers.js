@@ -16,7 +16,7 @@ const Modifiers = () => {
       }, []);
 
     const handleCardClick = (title) => {
-        navigate(`/modifier/${title}`);
+        navigate(`/modifiers/${title}`);
 
     }
 
