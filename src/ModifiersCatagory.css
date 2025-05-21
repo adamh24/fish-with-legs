@@ -1,0 +1,36 @@
+.catagory-page {
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth fade-in and slide-up */
+    transform: translateY(20px);
+}
+
+.catagory-page.fade-in {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to original position */
+}
+
+.catagory-page.fade-out {
+  opacity: 0; /* Fully transparent */
+  transform: translateY(20px); /* Slightly below */
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    margin: 1em
+}
+
+.subtitle {
+    color:white;
+    font-size: xx-large;
+    font-family: 'antonio';
+    z-index: 5
+}
+
+.catagory-image {
+    width: 49vw;
+    height: 35vh;
+}
+
+.modifier-title {
+    color: white;
+}
