@@ -78,6 +78,8 @@
   cursor: pointer;
 }
 
+
+
 .menu-dropdown {
   font-size: 1.5rem;
   cursor: pointer;
@@ -94,13 +96,15 @@
   left: 0;
   background-color: #284d3d;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  padding: 0.5rem 1rem;
+  /* padding: 0.5rem 1rem; */
   border-radius: 0.25rem;
   z-index: 20;
   pointer-events: none; /* Prevent interaction when hidden */
 }
 
-.group:hover .dropdown-content {
+.group:hover .dropdown-content,
+.dropdown-content:hover,
+.group:hover:is(.dropdown-content, .dropdown-content::before) {
   opacity: 1; /* Fully visible */
   transform: translateY(0); /* Move to original position */
   pointer-events: auto; /* Allow interaction when visible */
@@ -109,7 +113,7 @@
 .dropdown-content a {
   color: white;
   text-decoration: none;
-  padding: 0.25rem 0;
+  padding: 0.5rem 1rem;
   display: block;
   transition: background 0.2s;
   width: max-content;
@@ -136,14 +140,30 @@
   pointer-events: none; /* Prevent interaction when hidden */
 }
 
-.menu-group:hover .dropdown-menu-content {
-  opacity: 1; /* Fully visible */
-  transform: translateY(0); /* Move to original position */
-  pointer-events: auto; /* Allow interaction when visible */
+.menu-group {
+    padding: 0.5rem 1rem;
 
 }
 
+.menu-group:hover .dropdown-menu-content,
+.dropdown-menu-content:hover,
+.menu-group:hover:is(.dropdown-menu-content, .dropdown-menu-content::before) {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to original position */
+  pointer-events: auto; /* Allow interaction when visible */
+}
 
+/* Add a larger hover area around the dropdown */
+.dropdown-content::before,
+.dropdown-menu-content::before {
+  content: "";
+  position: absolute;
+  top: -5em; /* Extend hover area above */
+  left: -5em; /* Extend hover area to the left */
+  right: -5em; /* Extend hover area to the right */
+  bottom: -5em; /* Extend hover area below */
+  pointer-events: none; /* Ensure it doesn't block clicks */
+}
 
 .search-bar {
   position: absolute;
@@ -202,6 +222,7 @@
   text-decoration: none; /* Remove text decoration */
   font-family: 'League Spartan', sans-serif; /* Ensure League Spartan is applied */
   font-weight: 500; /* Optional: Adjust font weight if needed */
+  right: -5em;
 }
 
 .menu-text:hover, .search-icon:hover
