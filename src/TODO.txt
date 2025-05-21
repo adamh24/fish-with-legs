@@ -1,0 +1,6 @@
+ - hook up blank with data and links 
+ - transition on all pages 
+ - adam: background art
+ - domain and hosting reasearch 
+ - fix filter in cocktails 
+ - clear filter implenetation in cocktails 

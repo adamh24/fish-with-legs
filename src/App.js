@@ -9,7 +9,11 @@ import Cocktails from "./Cocktails";
 import Navigation from "./Navigation";
 import CocktailPage from "./CocktailPage";
 import Footer from "./Footer";
-
+import About from "./About";
+import Sustainability from "./Sustainability";
+import Reviews from "./Reviews";
+import Spotlight from "./Spotlight";
+import Ingredients from "./Ingredients";
 import "./App.css"; // Import the CSS file
 
 const App = () => {
@@ -49,12 +53,17 @@ const App = () => {
             <Route path="/cocktails" element={<Cocktails />} />
             <Route path="/cocktail/:title" element={<CocktailPage />} />
             <Route path="/dali-menu" element={<DaliMenu />} />
-            {/* <Route path="/about" element={<About />} /> */}
-            {/* <Route path="/modifiers" element={<Modifiers />} />
-            <Route path="/ingredients" element={<Ingredients />} />
-            <Route path="/history" element={<History />} />
+            <Route path="/about" element={<About />} />
             <Route path="/sustainability" element={<Sustainability />} />
-            <Route path="/contact" element={<Contact />} /> */}
+            <Route path="/reviews" element={<Reviews />} />
+            <Route path="/spotlight" element={<Spotlight />} />
+            <Route path="/ingredients" element={<Ingredients />} />
+            {/* <Route path="/modifiers" element={<Modifiers />} />
+            
+            <Route path="/history" element={<History />} />
+            
+            <Route path="/contact" element={<Contact />} />
+            */} 
 
         </Routes>
 

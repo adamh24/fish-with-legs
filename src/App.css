@@ -221,3 +221,22 @@ body {
   height: 100%;
   align-items: flex-end;
 }
+
+.page-title {
+  font-size: 48px;
+  color: #F8F6F2;
+  font-family: 'antonio'; 
+  margin-bottom: 20px;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh; /* Full height */
+  z-index: 5;
+  color: white;
+  position: relative;
+  font-family: 'League Spartan', sans-serif; /* Ensure League Spartan is applied */
+}
