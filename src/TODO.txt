@@ -1,8 +1,6 @@
- - review page 
  - hook up blank with data and links 
  - transition on all pages 
  - adam: background art
  - domain and hosting reasearch 
- - spirits spotlight or spolight page
  - fix filter in cocktails 
  - clear filter implenetation in cocktails 

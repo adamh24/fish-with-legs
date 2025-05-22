@@ -9,7 +9,11 @@ import Cocktails from "./Cocktails";
 import Navigation from "./Navigation";
 import CocktailPage from "./CocktailPage";
 import Footer from "./Footer";
-
+import About from "./About";
+import Sustainability from "./Sustainability";
+import Reviews from "./Reviews";
+import Spotlight from "./Spotlight";
+import Ingredients from "./Ingredients";
 import "./App.css"; // Import the CSS file
 import Modifiers from "./Modifiers";
 import ModifiersCatagory from "./ModifiersCatagory";
@@ -54,11 +58,17 @@ const App = () => {
             <Route path="/modifiers" element={<Modifiers/>} />
             <Route path="/modifiers/:catagory" element={<ModifiersCatagory />} />
             {/* <Route path="/about" element={<About />} /> */}
+            <Route path="/about" element={<About />} />
+            <Route path="/sustainability" element={<Sustainability />} />
+            <Route path="/reviews" element={<Reviews />} />
+            <Route path="/spotlight" element={<Spotlight />} />
+            <Route path="/ingredients" element={<Ingredients />} />
             {/* <Route path="/modifiers" element={<Modifiers />} />
             <Route path="/ingredients" element={<Ingredients />} />
             <Route path="/history" element={<History />} />
-            <Route path="/sustainability" element={<Sustainability />} />
-            <Route path="/contact" element={<Contact />} /> */}
+            
+            <Route path="/contact" element={<Contact />} />
+            */} 
 
         </Routes>
 

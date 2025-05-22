@@ -89,10 +89,10 @@ const Navigation = () => {
               </div>
               <Link to="/sustainability">Sustainability</Link>
               <Link to="/about">About</Link>
-              <Link to="/history">History</Link>
               <Link to="/contact">Contact</Link>
               <Link to="/ingredients">Ingredients</Link>
-              <Link to="/education">Education</Link>
+              <Link to="/reviews">Reviews</Link>
+              <Link to="/spotlight">Spotlight</Link>
           </div>
         </div>
 
