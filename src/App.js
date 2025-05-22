@@ -15,6 +15,8 @@ import Reviews from "./Reviews";
 import Spotlight from "./Spotlight";
 import Ingredients from "./Ingredients";
 import "./App.css"; // Import the CSS file
+import Modifiers from "./Modifiers";
+import ModifiersCatagory from "./ModifiersCatagory";
 
 const App = () => {
 
@@ -53,13 +55,16 @@ const App = () => {
             <Route path="/cocktails" element={<Cocktails />} />
             <Route path="/cocktail/:title" element={<CocktailPage />} />
             <Route path="/dali-menu" element={<DaliMenu />} />
+            <Route path="/modifiers" element={<Modifiers/>} />
+            <Route path="/modifiers/:catagory" element={<ModifiersCatagory />} />
+            {/* <Route path="/about" element={<About />} /> */}
             <Route path="/about" element={<About />} />
             <Route path="/sustainability" element={<Sustainability />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/spotlight" element={<Spotlight />} />
             <Route path="/ingredients" element={<Ingredients />} />
             {/* <Route path="/modifiers" element={<Modifiers />} />
-            
+            <Route path="/ingredients" element={<Ingredients />} />
             <Route path="/history" element={<History />} />
             
             <Route path="/contact" element={<Contact />} />

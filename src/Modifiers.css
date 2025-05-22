@@ -1,0 +1,88 @@
+.subtitle {
+    color:white;
+    font-size: xx-large;
+    font-family: 'antonio';
+    z-index: 5;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    margin: 1em
+}
+
+.catagory-image {
+    width: 49vw;
+    height: 35vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.catagory-card {
+    width: 47vw; /* Adjust the width of the cards */
+    height: 36vh; /* Maintain a 4:3 aspect ratio */
+    z-index: 4;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 1em;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+
+.catagory-card:hover {
+    transform: scale(1.05); /* Add a zoom effect on hover */
+}
+
+.catagory-title {
+    color: #555;
+    font-family: 'League Spartan', sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.catagory-description {
+    color: "#555";
+    font-family: 'League Spartan', sans-serif;
+}
+
+.catagory-deck {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(2, 1fr); /* Create 2 columns of equal width */
+    gap: 10px; /* Add spacing between cards */
+    padding: 10px; /* Add padding around the grid */
+    justify-items: center; /* Center the cards horizontally */
+    align-items: center; /* Center the cards vertically */
+    height: 80vh; /* Ensure the grid fits within 80% of the viewport height */
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
+.text-block {
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modifiers-page {
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth fade-in and slide-up */
+    transform: translateY(20px);
+}
+
+.modifiers-page.fade-in {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to original position */
+}
+
+.modifiers-page.fade-out {
+  opacity: 0; /* Fully transparent */
+  transform: translateY(20px); /* Slightly below */
+}
