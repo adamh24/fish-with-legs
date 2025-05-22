@@ -2,6 +2,5 @@
  - transition on all pages 
  - adam: background art
  - domain and hosting reasearch 
- - fix filter in cocktails 
  - clear filter implenetation in cocktails 
  - in cocktail recipies where a modifier is used add a link to that modifier 
