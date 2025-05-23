@@ -1,0 +1,25 @@
+.page-container {
+    width: 100vw;
+    height: 90vh;
+    overflow: scroll;
+}
+
+.title-box {
+    width: 100vw;
+     display: flex;
+    justify-content: center;
+    margin: 1em;
+}
+
+.about-title {
+    color:white;
+    font-size: xx-large;
+    font-family: 'antonio';
+    z-index: 5;
+}
+
+.info-block {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+}
