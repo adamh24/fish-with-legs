@@ -36,7 +36,7 @@ const Cocktails = () => {
       const newFilteredCocktails = cocktailData.filter((cocktail) => {
         const matchesMenu = newFilter.menu ? cocktail.menu === newFilter.menu : true;
         const matchesflavors = newFilter.flavors
-          ? cocktail.flavorss.includes(newFilter.flavors)
+          ? cocktail.flavors.includes(newFilter.flavors)
           : true;
         return matchesMenu && matchesflavors;
       });
@@ -84,7 +84,7 @@ const Cocktails = () => {
           </select>
           <button
             className="clear-button"
-            onClick={() => setFilter({ menu: "", flavors: "" })}
+            onClick={() => handleFilterChange({ menu: "", flavors: "" })}
           >
             Clear Filters
           </button>

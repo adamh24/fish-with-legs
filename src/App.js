@@ -13,7 +13,6 @@ import About from "./About";
 import Sustainability from "./Sustainability";
 import Reviews from "./Reviews";
 import Spotlight from "./Spotlight";
-import Ingredients from "./Ingredients";
 import "./App.css"; // Import the CSS file
 import Modifiers from "./Modifiers";
 import ModifiersCatagory from "./ModifiersCatagory";
@@ -62,7 +61,6 @@ const App = () => {
             <Route path="/sustainability" element={<Sustainability />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/spotlight" element={<Spotlight />} />
-            <Route path="/ingredients" element={<Ingredients />} />
             {/* <Route path="/modifiers" element={<Modifiers />} />
             <Route path="/ingredients" element={<Ingredients />} />
             <Route path="/history" element={<History />} />

@@ -4,3 +4,4 @@
  - domain and hosting reasearch 
  - clear filter implenetation in cocktails 
  - in cocktail recipies where a modifier is used add a link to that modifier 
+ - add modifiefr to search
