@@ -3,7 +3,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import cocktailData from "./data/cocktails.json"; // Import the JSON data
 import CocktailCard from "./CocktailCard"; // Import the CocktailCard component
 import "./App.css"; // Import the CSS file
-
+import FilterButtons from "./FilterButtons"; // Import the FilterButtons component
 
 const Cocktails = () => {
   const [filter, setFilter] = useState({ menu: "", flavors: "" }); // Filter state
@@ -58,38 +58,11 @@ const Cocktails = () => {
 
   return (
     <div className={`masonry-container ${isLoaded ? "fade-in" : "fade-out"}`}>
-      {/* Filter Buttons */}
-        <div className="filter-buttons">
-          <select
-              className="filter-select"
-              onChange={(e) => handleFilterChange({ ...filter, menu: e.target.value })}
-              >
-              <option value="">Filter by Menu</option>
-              <option value="Classic">Classic</option>
-              <option value="Botanical">Botanical</option>
-              <option value="Tropical">Tropical</option>
-              </select>
-              <select
-              className="filter-select"
-              onChange={(e) => handleFilterChange({ ...filter, flavors: e.target.value })}
-              >
-              <option value="">Filter by Ingredients</option>
-              <option value="Espresso">Espresso</option>
-              <option value="Vodka">Vodka</option>
-              <option value="Coffee Liqueur">Coffee Liqueur</option>
-              <option value="Pistachio">Pistachio</option>
-              <option value="Prosecco">Prosecco</option>
-              <option value="Rum">Rum</option>
-              <option value="Berries">Berries</option>
-          </select>
-          <button
-            className="clear-button"
-            onClick={() => handleFilterChange({ menu: "", flavors: "" })}
-          >
-            Clear Filters
-          </button>
-          </div>
-          <div
+            
+        <FilterButtons filter={filter} onFilterChange={handleFilterChange} />
+
+
+        <div
           id="animation-div"
           style={{
               opacity: isAnimating ? 0 : 1, // Fade in or out
@@ -100,7 +73,9 @@ const Cocktails = () => {
               : "translateX(0)", // Center position
               transition: `opacity 0.4s ease, transform 0.4s ease `, 
           }}
-          >
+        >
+
+        {/* Cocktail Cards */}
          <ResponsiveMasonry>
             <Masonry>
                 
@@ -114,11 +89,11 @@ const Cocktails = () => {
                   }}
                   />
               ))}   
+
             </Masonry>
           </ResponsiveMasonry>
         </div>
 
-        {/* Cocktail Cards */}
         
     </div>
   );
