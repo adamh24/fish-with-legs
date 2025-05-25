@@ -3,15 +3,14 @@ import "./App.css"; // Import the CSS file for styling
 
 const FilterButtons = ({ filter, onFilterChange }) => {
   return (
-    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%", flexDirection: "row", padding: "10px", height: "10vh" }}>
-        <div className="sort-buttons">
-            {/* Sort by Name */}
+    <div >
+        {/* <div className="sort-buttons">
             <button
                 className="sort-button"
                 onClick={() => onFilterChange({ ...filter, sort: "name" })}
                 style={{width: "100px", height: "40px", marginRight: "10px", color: "black"}}
             >Sort By</button>
-        </div>
+        </div> */}
         <div className="filter-buttons">
         {/* Filter by Menu */}
         <select
