@@ -1,4 +1,4 @@
-import './Sustainability.css';
+import './styles/Sustainability.css';
 
 const Sustainability = () => {
     return (
