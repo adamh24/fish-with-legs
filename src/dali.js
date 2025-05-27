@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import cocktailData from "./data/cocktails.json"; // Import the JSON data
-import CocktailCard from "./CocktailCard"; // Import the CocktailCard component
+import CocktailCard from "./components/CocktailCard"; // Import the CocktailCard component
 
 const DaliMenu = () => {
   const [filteredCocktails, setFilteredCocktails] = useState([]);
