@@ -44,7 +44,7 @@
     transform: scale(1.05);
 }
 
-.text-block{
+.text-blk {
     display: flex;
     margin-left: 3em;
     align-items: flex-start;
