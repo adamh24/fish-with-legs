@@ -19,6 +19,10 @@ const About = () => {
                     <span>
                         Join me on this journey of flavors and creativity, and let's raise a glass to good times and great company!
                     </span>
+                    <div className="adam-photo"
+                            style={{
+                            backgroundImage: `url(${require(`./assets/adam1.png`)})`
+                            }}></div>
                 </div>
             </div>
         </div>
