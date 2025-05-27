@@ -7,7 +7,10 @@
 html,
 body {
   overflow: hidden;
+  overflow-x: hidden;
+
 }
+
 
 .image-button {
   width: 33%;
@@ -41,6 +44,15 @@ body {
 .image-button:hover {
   transform: scale(1.05); /* Zoom in slightly on hover */
 
+}
+
+@media (max-width: 768px) {
+  .image-button {
+    width: 100%; /* Full width on mobile */
+    height: 50vh; /* Adjust height for mobile */
+    margin-inline: 0; /* Remove horizontal margins */
+    margin-top: 1.5em; /* Add some top margin for spacing */
+  }
 }
 
 .image-button-title {

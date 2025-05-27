@@ -25,3 +25,24 @@
     margin-bottom: 8vh;
     padding-inline: 2em;
 }
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+    .feature-image {
+        /* height: 13vh; 
+        width: 100%; 
+        top: 0; 
+        object-fit: cover;
+        margin-left: unset;
+        z-index: -1; */
+        display: none;;
+    }
+
+    .article-features {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        height: 80vh;
+    }
+}
