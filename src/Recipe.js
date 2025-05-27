@@ -2,9 +2,9 @@ import React from "react";
 import cocktails from "./data/cocktails.json"; // Import the cocktails data
 import { useParams } from "react-router-dom"; // Import useParams to get URL parameters
 
-import "./CocktailPage.css"; // Import CSS for styling
+import "./styles/Recipe.css"; // Import CSS for styling
 
-const CocktailPage = () => {
+const Recpie = () => {
   // Find the cocktail with the matching title
   const { title } = useParams(); // Get the title from the URL
   const cocktail = cocktails.find((c) => c.title === title);
@@ -62,4 +62,4 @@ const CocktailPage = () => {
   );
 };
 
-export default CocktailPage;
+export default Recpie;

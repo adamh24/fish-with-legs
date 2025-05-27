@@ -1,7 +1,7 @@
 
 import modifiers from "./data/modifiers.json";
 import { useParams } from "react-router-dom";
-import "./ModifiersCatagory.css";
+import "./styles/ModifiersCatagory.css";
 import { useEffect, useState } from "react";
 
 const ModifiersCatagory = () => {

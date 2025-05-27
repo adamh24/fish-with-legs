@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
-import "./App.css"; // Import the CSS file
+import "../styles/App.css";
 
 const CocktailCard = ({ image, title, style }) => {
   const navigate = useNavigate(); // Initialize the navigate function
