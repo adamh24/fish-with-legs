@@ -27,7 +27,7 @@
 }
 
 /* Media query for mobile screens */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .feature-image {
         /* height: 13vh; 
         width: 100%; 
@@ -46,3 +46,4 @@
         height: 80vh;
     }
 }
+

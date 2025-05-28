@@ -54,7 +54,6 @@ body {
     margin-top: 1.5em; /* Add some top margin for spacing */
   }
 }
-
 .image-button-title {
   position: absolute;
   bottom: 10px;
@@ -64,6 +63,22 @@ body {
   font-family: 'antonio'; 
   z-index: 2; /* Ensure the title is above the gradient */
 
+}
+
+@media (min-width: 500px) and (max-width: 900px) {
+  .image-button {
+    margin-inline: 1em; /* Remove horizontal margins */
+    justify-content: center;
+    display: flex;
+    padding: 1em;
+    align-items: flex-end;
+  }
+
+  .image-button-title {
+    position: relative;
+    left: unset;
+    bottom: unset;
+  }
 }
 
 .masonry-container {
