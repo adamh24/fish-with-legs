@@ -81,6 +81,13 @@ body {
   }
 }
 
+@media (min-width: 900px) {
+
+  .image-button-title {
+    font-size: 3em;
+  }
+}
+
 .masonry-container {
   padding-top: 2vh;
   padding-inline: 2vh;
