@@ -92,6 +92,9 @@ const Navigation = () => {
               <Link to="/contact">Contact</Link>
               <Link to="/reviews">Reviews</Link>
               <Link to="/spotlight">Spotlight</Link>
+              <Link to={`/quiz/personality-quiz`}>Personality Quiz</Link>
+              <Link to={`/quiz/knowledge-quiz`}>Knowledge Quiz</Link>
+              
           </div>
         </div>
 
