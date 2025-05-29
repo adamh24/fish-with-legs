@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "quiz-name": "personality-quiz",
+        "answers": 
+        {
+            "Relaxed": "Pina Colada",
+            "Adventurous": "Spicy Margarita",
+            "Nature Lover": "Herbal Gin and Tonic",
+            "Intellectual": "Old Fashioned"
+        }
+    }
+]

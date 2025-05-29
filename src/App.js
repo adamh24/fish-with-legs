@@ -16,6 +16,7 @@ import Spotlight from "./Spotlight";
 import "./styles/App.css";
 import Modifiers from "./Modifiers";
 import ModifiersCatagory from "./ModifiersCatagory";
+import Quiz from "./components/Quiz";
 
 const App = () => {
 
@@ -61,6 +62,7 @@ const App = () => {
             <Route path="/sustainability" element={<Sustainability />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/spotlight" element={<Spotlight />} />
+            <Route path="/quiz" element={<Quiz />} />
             {/* <Route path="/modifiers" element={<Modifiers />} />
             <Route path="/ingredients" element={<Ingredients />} />
             <Route path="/history" element={<History />} />
