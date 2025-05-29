@@ -7,7 +7,11 @@
             "Relaxed": "Pina Colada",
             "Adventurous": "Spicy Margarita",
             "Nature Lover": "Herbal Gin and Tonic",
-            "Intellectual": "Old Fashioned"
+            "Intellectual": "Old Fashioned",
+            "Sophisticated": "Champagne Cocktail",
+            "Social": "Sangria",
+            "Creative": "Negroni",
+            "Energetic": "Espresso Martini"
         }
     }
 ]

@@ -18,6 +18,14 @@
             {
                 "answer": "A historical site with rich heritage",
                 "personality": "Intellectual"
+            },
+            {
+                "answer": "A luxury cruise across the ocean",
+                "personality": "Sophisticated"
+            },
+            {
+                "answer": "A road trip with friends",
+                "personality": "Social"
             }
         ]
     },
@@ -40,6 +48,14 @@
             {
                 "answer": "Classical or jazz",
                 "personality": "Intellectual"
+            },
+            {
+                "answer": "Indie or alternative rock",
+                "personality": "Creative"
+            },
+            {
+                "answer": "Hip-hop or rap",
+                "personality": "Energetic"
             }
         ]
     },
@@ -62,6 +78,14 @@
             {
                 "answer": "Visiting a museum or attending a lecture",
                 "personality": "Intellectual"
+            },
+            {
+                "answer": "Hosting a dinner party with friends",
+                "personality": "Social"
+            },
+            {
+                "answer": "Painting, writing, or working on a creative project",
+                "personality": "Creative"
             }
         ]
     },
@@ -84,6 +108,14 @@
             {
                 "answer": "A glass of fine wine or whiskey",
                 "personality": "Intellectual"
+            },
+            {
+                "answer": "A sparkling water with a twist of lime",
+                "personality": "Sophisticated"
+            },
+            {
+                "answer": "An energy drink or espresso shot",
+                "personality": "Energetic"
             }
         ]
     },
@@ -106,6 +138,14 @@
             {
                 "answer": "Historical dramas or thought-provoking films",
                 "personality": "Intellectual"
+            },
+            {
+                "answer": "Art-house or experimental films",
+                "personality": "Creative"
+            },
+            {
+                "answer": "Fast-paced action or superhero movies",
+                "personality": "Energetic"
             }
         ]
     },
@@ -128,6 +168,14 @@
             {
                 "answer": "Gourmet or fine dining cuisine",
                 "personality": "Intellectual"
+            },
+            {
+                "answer": "Charcuterie boards or small plates",
+                "personality": "Sophisticated"
+            },
+            {
+                "answer": "Comfort food like pizza or burgers",
+                "personality": "Social"
             }
         ]
     }

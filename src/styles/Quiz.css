@@ -4,6 +4,9 @@
     padding: 20px;
     text-align: center;
     font-family: Arial, sans-serif;
+    color: white;
+    z-index: 4;
+    position: relative;
   }
   
   .question-container {

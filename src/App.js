@@ -62,7 +62,7 @@ const App = () => {
             <Route path="/sustainability" element={<Sustainability />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/spotlight" element={<Spotlight />} />
-            <Route path="/quiz" element={<Quiz />} />
+            <Route path="/quiz:title" element={<Quiz />} />
             {/* <Route path="/modifiers" element={<Modifiers />} />
             <Route path="/ingredients" element={<Ingredients />} />
             <Route path="/history" element={<History />} />
