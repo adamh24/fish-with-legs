@@ -3,7 +3,8 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import cocktailData from "./data/cocktails.json"; // Import the JSON data
 import CocktailCard from "./components/CocktailCard"; // Import the CocktailCard component
 import "./styles/App.css"; // Import the CSS file
-import FilterButtons from "./FilterButtons"; // Import the FilterButtons component
+import FilterButtons from "./components/FilterButtons"; // Import the FilterButtons component
+import SortBy from "./components/SortBy";
 
 const Cocktails = () => {
   const [filter, setFilter] = useState({ menu: "", flavors: "" });

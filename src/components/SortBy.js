@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import './CocktailPage.css';
+// import '../styles/CocktailPage.css';
 
 const SORT_OPTIONS = [
   { value: "alphabetical", label: "Alphabetical" },
