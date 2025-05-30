@@ -7,3 +7,4 @@
  - add modifiefr to search
  - filter by type, base spirit 
  - sort cocktails alphabetically 
+ - seperate quiz into two seperate files 
