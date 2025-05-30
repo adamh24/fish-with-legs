@@ -2,35 +2,47 @@ import React, { useState, useEffect } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import cocktailData from "./data/cocktails.json"; // Import the JSON data
 import CocktailCard from "./components/CocktailCard"; // Import the CocktailCard component
-import "./styles/App.css";
-
+import "./styles/App.css"; // Import the CSS file
+import FilterButtons from "./FilterButtons"; // Import the FilterButtons component
 
 const Cocktails = () => {
-  const [filter, setFilter] = useState({ menu: "", flavors: "" }); // Filter state
-  const [filteredCocktails, setFilteredCocktails] = useState(cocktailData); // Filtered items
-  const [isAnimating, setIsAnimating] = useState(false); // Animation state
-  const [animateType, setAnimateType] = useState("in"); // Animation direction
-  const [isLoaded, setIsLoaded] = useState(false); // Track if the component has loaded
+  const [filter, setFilter] = useState({ menu: "", flavors: "" });
+  const [filteredCocktails, setFilteredCocktails] = useState(cocktailData);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [animateType, setAnimateType] = useState("in");
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [sortBy, setSortBy] = useState("alphabetical");
+
+  // Sorting logic
+  const getSortedCocktails = () => {
+    let sorted = [...filteredCocktails];
+    if (sortBy === "alphabetical") {
+      sorted.sort((a, b) => a.title.localeCompare(b.title));
+    } else if (sortBy === "recent") {
+      sorted.sort((a, b) => new Date(b.date) - new Date(a.date));
+    } else if (sortBy === "featured") {
+      sorted.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+    }
+    return sorted;
+  };
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoaded(true);
-    }, 100); // Delay to ensure smooth animation
+    }, 100);
 
     if (filteredCocktails !== cocktailData) {
-        // Trigger the animation only when the filter changes
-        setTimeout(() => {
-          setIsAnimating(true);
-        }, 50); // Delay to ensure smooth animation
-      } else {
-        // Ensure the first set of cocktails is displayed without animation
-        setIsAnimating(false);
-      }
+      setTimeout(() => {
+        setIsAnimating(true);
+      }, 50);
+    } else {
+      setIsAnimating(false);
+    }
   }, [filteredCocktails]);
 
   const handleFilterChange = (newFilter) => {
-    setAnimateType("out"); // Set animation type to "out" (slide out to the left)
-    setIsAnimating(true); // Start fade-out animation
+    setAnimateType("out");
+    setIsAnimating(true);
 
     setTimeout(() => {
       const newFilteredCocktails = cocktailData.filter((cocktail) => {
@@ -41,15 +53,20 @@ const Cocktails = () => {
         return matchesMenu && matchesflavors;
       });
 
-      setFilter(newFilter); // Update the filter state
-      setFilteredCocktails(newFilteredCocktails); // Update the filtered items
-      setAnimateType("in"); // Set animation type to "in" (slide in from the right)
-      
+      setFilter(newFilter);
+      setFilteredCocktails(newFilteredCocktails);
+      setAnimateType("in");
+
       setTimeout(() => {
-        setIsAnimating(false); // End animation
-      }, 200); // Match the duration of the fade-in animation
-    }, 200); // Match the duration of the fade-out animation
-  };   
+        setIsAnimating(false);
+      }, 200);
+    }, 200);
+  };
+
+  // NEW: Sort change handler
+  const handleSortChange = (e) => {
+    setSortBy(e.target.value);
+  };
 
   const getRandomHeight = () => {
     const heights = ["20vh", "30vh", "40vh", "50vh", "60vh"];
@@ -58,43 +75,37 @@ const Cocktails = () => {
 
   return (
     <div className={`masonry-container ${isLoaded ? "fade-in" : "fade-out"}`}>
-            
+      <div style={{ display: "flex", alignItems: "space-between", gap: "1rem", marginBottom: "1rem" }}>
+        <SortBy sortBy={sortBy} onSortChange={handleSortChange} />
         <FilterButtons filter={filter} onFilterChange={handleFilterChange} />
-
-
-        <div
-          id="animation-div"
-          style={{
-              opacity: isAnimating ? 0 : 1, // Fade in or out
-              transform: isAnimating
-              ? animateType === "in"
-                ? "translateX(100%)" // Slide in from the right
-                : "translateX(-100%)" // Slide out to the left
-              : "translateX(0)", // Center position
-              transition: `opacity 0.4s ease, transform 0.4s ease `, 
-          }}
-        >
-
-        {/* Cocktail Cards */}
-         <ResponsiveMasonry>
-            <Masonry>
-                
-              {filteredCocktails.map((cocktail, index) => (
-                  <CocktailCard
-                  key={cocktail.id}
-                  image={require(`${cocktail.image}`)}
-                  title={cocktail.title}
-                  style={{
-                      height: getRandomHeight(), // Assign a random height
-                  }}
-                  />
-              ))}   
-
-            </Masonry>
-          </ResponsiveMasonry>
-        </div>
-
-        
+      </div>
+      <div
+        id="animation-div"
+        style={{
+          opacity: isAnimating ? 0 : 1,
+          transform: isAnimating
+            ? animateType === "in"
+              ? "translateX(100%)"
+              : "translateX(-100%)"
+            : "translateX(0)",
+          transition: `opacity 0.4s ease, transform 0.4s ease `,
+        }}
+      >
+        <ResponsiveMasonry>
+          <Masonry>
+            {getSortedCocktails().map((cocktail, index) => (
+              <CocktailCard
+                key={cocktail.id}
+                image={require(`${cocktail.image}`)}
+                title={cocktail.title}
+                style={{
+                  height: getRandomHeight(),
+                }}
+              />
+            ))}
+          </Masonry>
+        </ResponsiveMasonry>
+      </div>
     </div>
   );
 };
