@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router';
-import './Modifiers.css';
+import './styles/Modifiers.css';
 import modifierdata from './data/cat-mods.json';
 import { useEffect, useState } from "react";
 

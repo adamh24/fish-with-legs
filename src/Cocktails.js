@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import cocktailData from "./data/cocktails.json"; // Import the JSON data
-import CocktailCard from "./CocktailCard"; // Import the CocktailCard component
-import "./App.css"; // Import the CSS file
-import FilterButtons from "./FilterButtons"; // Import the FilterButtons component
+import CocktailCard from "./components/CocktailCard"; // Import the CocktailCard component
+import "./styles/App.css";
+
 
 const Cocktails = () => {
   const [filter, setFilter] = useState({ menu: "", flavors: "" }); // Filter state

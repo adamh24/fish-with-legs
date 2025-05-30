@@ -1,16 +1,30 @@
+import './styles/About.css';
+
 const About = () => {
     return (
         <div className="page-container">
-        <h1 className="page-title">About Us</h1>
-        <p>
-            Welcome to our cocktail bar! We are passionate about crafting unique and delicious cocktails that will tantalize your taste buds. Our team of skilled mixologists is dedicated to using only the finest ingredients and techniques to create unforgettable drinking experiences.
-        </p>
-        <p>
-            At our bar, we believe that cocktails are not just drinks, but an art form. We take pride in our creativity and attention to detail, ensuring that each cocktail is a masterpiece in its own right. Whether you're a fan of classic cocktails or looking to try something new and innovative, we have something for everyone.
-        </p>
-        <p>
-            Join us for a night of fun, laughter, and great drinks. We can't wait to serve you!
-        </p>
+
+            <div className="title-box">
+                <span className="about-title">The Man Behind the Bar</span>
+            </div>
+
+            <div className="info-block">
+                <div className="info-text">
+                    <span>
+                        Hello! I'm a passionate bartender with a love for mixology and creating unique cocktails. I believe that every drink tells a story, and I'm here to help you discover your next favorite.
+                    </span>
+                    <span>
+                        With years of experience behind the bar, I've honed my skills in crafting both classic and innovative cocktails. Whether you're looking for a refreshing summer drink or a cozy winter warmer, I've got you covered.
+                    </span>
+                    <span>
+                        Join me on this journey of flavors and creativity, and let's raise a glass to good times and great company!
+                    </span>
+                    <div className="adam-photo"
+                            style={{
+                            backgroundImage: `url(${require(`./assets/adam1.png`)})`
+                            }}></div>
+                </div>
+            </div>
         </div>
     );
 }

@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FiSearch, FiMenu, FiX } from 'react-icons/fi'; // Import FiX for the cancel button
-import cocktails from './data/cocktails.json';
+import cocktails from '../data/cocktails.json';
 import { motion, AnimatePresence } from 'framer-motion';
-import './Navbar.css';
+import '../styles/Navbar.css';
 
 const Navigation = () => {
   const [searchActive, setSearchActive] = useState(false);
@@ -92,6 +92,9 @@ const Navigation = () => {
               <Link to="/contact">Contact</Link>
               <Link to="/reviews">Reviews</Link>
               <Link to="/spotlight">Spotlight</Link>
+              <Link to={`/personality-quiz`}>Personality Quiz</Link>
+              <Link to={`/knowledge-quiz`}>Knowledge Quiz</Link>
+              
           </div>
         </div>
 

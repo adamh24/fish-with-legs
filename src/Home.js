@@ -1,11 +1,11 @@
-import CocktailCard from "./CocktailCard";
+import CocktailCard from "./components/CocktailCard";
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import { useEffect, useState } from "react";
-import Feature from "./Feature";
-import './Home.css';
-import ArticleFeatures from "./ArticleFeatures";
-import HomeFeature from "./HomeFeature";
-import Footer from "./Footer";
+import Feature from "./components/Feature";
+import './styles/Home.css';
+import ArticleFeatures from "./components/ArticleFeatures";
+import HomeFeature from "./components/HomeFeature";
+import Footer from "./components/Footer";
 
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false); // Track if the component has loaded

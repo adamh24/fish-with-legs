@@ -4,18 +4,21 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import Home from "./Home";
-import DaliMenu from "./dali";
+import DaliMenu from "./Dali";
 import Cocktails from "./Cocktails";
-import Navigation from "./Navigation";
-import CocktailPage from "./CocktailPage";
-import Footer from "./Footer";
+import Navigation from "./components/Navigation";
+import Recipe from "./Recipe";
+import Footer from "./components/Footer";
 import About from "./About";
 import Sustainability from "./Sustainability";
 import Reviews from "./Reviews";
 import Spotlight from "./Spotlight";
-import "./App.css"; // Import the CSS file
+import "./styles/App.css";
 import Modifiers from "./Modifiers";
 import ModifiersCatagory from "./ModifiersCatagory";
+import Quiz from "./components/Quiz";
+import PersonalityQuiz from "./components/PersonalityQuiz";
+import KnowledgeQuiz from "./components/KnowledgeQuiz";
 
 const App = () => {
 
@@ -52,7 +55,7 @@ const App = () => {
           
             <Route path="/" element={<Home />} />
             <Route path="/cocktails" element={<Cocktails />} />
-            <Route path="/cocktail/:title" element={<CocktailPage />} />
+            <Route path="/cocktail/:title" element={<Recipe />} />
             <Route path="/dali-menu" element={<DaliMenu />} />
             <Route path="/modifiers" element={<Modifiers/>} />
             <Route path="/modifiers/:catagory" element={<ModifiersCatagory />} />
@@ -61,6 +64,8 @@ const App = () => {
             <Route path="/sustainability" element={<Sustainability />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/spotlight" element={<Spotlight />} />
+            <Route path="/personality-quiz" element={<PersonalityQuiz />} />
+            <Route path="/knowledge-quiz" element={<KnowledgeQuiz />} />
             {/* <Route path="/modifiers" element={<Modifiers />} />
             <Route path="/ingredients" element={<Ingredients />} />
             <Route path="/history" element={<History />} />
