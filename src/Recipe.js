@@ -1,10 +1,10 @@
 import React from "react";
+import { Link, useParams } from "react-router-dom"; // Import Link for navigation
 import cocktails from "./data/cocktails.json"; // Import the cocktails data
-import { useParams } from "react-router-dom"; // Import useParams to get URL parameters
-
+import modifiers from "./data/modifiers.json"; // Import the modifiers data
 import "./styles/Recipe.css"; // Import CSS for styling
 
-const Recpie = () => {
+const Recipe = () => {
   // Find the cocktail with the matching title
   const { title } = useParams(); // Get the title from the URL
   const cocktail = cocktails.find((c) => c.title === title);
@@ -13,6 +13,25 @@ const Recpie = () => {
   if (!cocktail) {
     return <div>Cocktail not found.</div>;
   }
+
+  // Check if an ingredient matches a modifier title
+  const getIngredientElement = (ingredient) => {
+    const matchingModifier = modifiers.find(
+      (modifier) => ingredient.toLowerCase().includes(modifier.title.toLowerCase())
+    );
+
+    if (matchingModifier) {
+      // If a match is found, return a Link to the modifier recipe page
+      return (
+        <Link to={`/modifier/${matchingModifier.id}`} className="ingredient-link">
+          {ingredient}
+        </Link>
+      );
+    }
+
+    // If no match is found, return the ingredient as plain text
+    return ingredient;
+  };
 
   return (
     <div className="cocktail-page">
@@ -32,7 +51,7 @@ const Recpie = () => {
             <h2>Ingredients</h2>
             <ul>
               {cocktail.ingredients.map((ingredient, index) => (
-                <li key={index}>{ingredient}</li>
+                <li key={index}>{getIngredientElement(ingredient)}</li>
               ))}
             </ul>
             <h3>Pairings</h3>
@@ -62,4 +81,4 @@ const Recpie = () => {
   );
 };
 
-export default Recpie;
+export default Recipe;

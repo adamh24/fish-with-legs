@@ -108,6 +108,32 @@
             "Squirt with purpose!"
         ]
 
+    }, 
+    {
+        "id": 5,
+        "title": "Peach Jasmine Syrup",
+        "flavors": ["Peach", "Jasmine", "Syrup"],
+        "image": "./assets/cocktail1.png",
+        "description": "Peach Jasmine Syrupy thingy",
+        "ingredients": [
+            "Peach",
+            "Jasmine"
+        ],
+        "instructions": [
+            "Add all ingredients to a squirty can.",
+            "Shake vigorously for 15-20 seconds.",
+            "chill for time.",
+            "SQUIRT."
+        ],
+        "pairings": [
+            "Chocolate desserts",
+            "Cheesecake",
+            "Breasts"
+        ],
+        "notes": [
+            "Squirt with purpose!"
+        ]
+
     }
 
 ]
