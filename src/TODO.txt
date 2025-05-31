@@ -2,7 +2,6 @@
  - transition on all pages 
  - adam: background art
  - clear filter implenetation in cocktails 
- - in cocktail recipies where a modifier is used add a link to that modifier 
  - filter by type, base spirit 
  - sort cocktails alphabetically, most recent, featured, with featured as default
  - add a loading icon
