@@ -30,13 +30,13 @@
     {
         "id": 2,
         "catagory": "Foams",
-        "title": "snd Chocolate Raspberry Foam",
+        "title": "Pineapple coconut Foam",
         "breif": "Bitter-sweet topping for the pastel girlies",
         "image": "./assets/cocktail1.png",
         "description": "Chocolaty, Raspberryey foam like think",
         "ingredients": [
-            "Chocolate",
-            "Raspberry",
+            "pineapple",
+            "coconut",
             "Foam"
         ],
         "instructions": [
@@ -57,7 +57,7 @@
     },
     {
         "id": 3,
-        "title": "snd Chocolate Raspberry Foam",
+        "title": "Pistacio Foam",
         "flavors": ["Chocolate", "Raspberry", "Foam"],
         "image": "./assets/cocktail1.png",
         "description": "Chocolaty, Raspberryey foam like think",
@@ -84,7 +84,7 @@
     },
     {
         "id": 4,
-        "title": "snd Chocolate Raspberry Foam",
+        "title": "Grenadine Foam",
         "flavors": ["Chocolate", "Raspberry", "Foam"],
         "image": "./assets/cocktail1.png",
         "description": "Chocolaty, Raspberryey foam like think",
