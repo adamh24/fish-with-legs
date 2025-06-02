@@ -1,6 +1,6 @@
 import React from "react";
-import "../styles/Filter.css"; // Import the CSS file
-import "../styles/Navbar.css"; // Import the Navbar CSS file
+import "../styles/Filter.css"; // Import the updated CSS file
+
 const SortBy = ({ sortBy, onSortChange }) => {
   return (
     <div className="sort-by-container">
