@@ -64,19 +64,18 @@ const Cocktails = () => {
     }, 200);
   };
 
-  // NEW: Sort change handler
   const handleSortChange = (e) => {
     setSortBy(e.target.value);
   };
 
   const getRandomHeight = () => {
-    const heights = ["20vh", "30vh", "40vh", "50vh", "60vh"];
+    const heights = ["30vh", "35vh", "40vh"];
     return heights[Math.floor(Math.random() * heights.length)];
   };
 
   return (
     <div className={`masonry-container ${isLoaded ? "fade-in" : "fade-out"}`}>
-      <div style={{ display: "flex", alignItems: "space-between", gap: "1rem", marginBottom: "1rem" }}>
+      <div style={{ display: "flex", alignItems: "space-between", gap: "1rem", marginBottom: "1rem", aspectRatio: "auto", justifyContent: "space-between" }}>
         <SortBy sortBy={sortBy} onSortChange={handleSortChange} />
         <FilterButtons filter={filter} onFilterChange={handleFilterChange} />
       </div>

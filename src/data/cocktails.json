@@ -4,7 +4,7 @@
       "title": "Espresso Martini",
       "menu": "Classic",
       "flavors": ["Espresso", "Vodka", "Coffee Liqueur"],
-      "image": "./assets/cocktail1.png",
+      "image": "./assets/cocktail8.jpg",
       "description": "A rich and creamy cocktail with a kick of caffeine, perfect for coffee lovers.",
       "ingredients": [
         "2 oz Vodka",
@@ -33,7 +33,7 @@
       "title": "Pistachio Spritz",
       "menu": "Botanical",
       "flavors": ["Pistachio", "Prosecco", "Soda Water"],
-      "image": "./assets/cocktail2.png",
+      "image": "./assets/cocktail1.png",
       "description": "A refreshing spritz with a nutty twist, perfect for summer afternoons.",
       "ingredients": [
         "1 oz Pistachio Syrup",
@@ -75,21 +75,21 @@
       "title": "Rumtini",
       "menu": "Tropical",
       "flavors": ["Rum", "Pineapple", "Coconut"],
-      "image": "./assets/cocktail5.png"
+      "image": "./assets/cocktail7.jpg"
     },
     {
       "id": 6,
       "title": "Elephant",
       "menu": "Dali",
       "flavors": ["Amarula", "Sweet Vermouth", "Cacao Bitters"],
-      "image": "./assets/cocktail5.png"
+      "image": "./assets/cocktail6.jpg"
     },
     {
       "id": 7,
       "title": "Jasmine and Peach Martini",
       "menu": "Dali",
       "flavors": ["Peach", "Jasmine", "Citrus"],
-      "image": "./assets/cocktail5.png",
+      "image": "./assets/cocktail8.jpg",
       "description": "A floral and fruity cocktail that combines the sweetness of peach with the delicate aroma of jasmine.",
       "ingredients": [
         "2 oz Vodka",
@@ -110,6 +110,63 @@
       "notes": [
         "Use fresh jasmine flowers for garnish if available.",
         "Adjust the sweetness with more or less jasmine syrup."
+      ]
+    }, 
+    {
+      "id": 8,
+      "title": "Spicy Margarita",
+      "menu": "Tropical",
+      "flavors": ["Tequila", "Lime", "Spicy Pepper"],
+      "image": "./assets/cocktail4.png",
+      "description": "A bold and spicy twist on the classic margarita, perfect for those who love a kick.",
+      "ingredients": [
+        "2 oz Tequila",
+        "1 oz Lime Juice",
+        "0.5 oz Agave Syrup",
+        "1 slice Jalapeño Pepper"
+      ],
+      "instructions": [
+        "Muddle the jalapeño slice in a shaker.",
+        "Add tequila, lime juice, and agave syrup with ice.",
+        "Shake well and strain into a salt-rimmed glass filled with ice.",
+        "Garnish with a lime wheel and jalapeño slice."
+      ],
+      "pairings": [
+        "Spicy tacos",
+        "Grilled shrimp",
+        "Chips and salsa"
+      ],
+      "notes": [
+        "Adjust the spiciness by adding more or less jalapeño.",
+        "Use fresh lime juice for the best flavor."
+      ]
+    }, 
+    {
+      "id": 9,
+      "title": "Lavender Collins",
+      "menu": "Botanical",
+      "flavors": ["Lavender", "Gin", "Lemon"],
+      "image": "./assets/cocktail6.jpg",
+      "description": "A refreshing and floral cocktail that combines the herbal notes of gin with the delicate flavor of lavender.",
+      "ingredients": [
+        "2 oz Gin",
+        "1 oz Lavender Syrup",
+        "1 oz Fresh Lemon Juice",
+        "Soda Water"
+      ],
+      "instructions": [
+        "Add gin, lavender syrup, and lemon juice to a shaker with ice.",
+        "Shake well and strain into a glass filled with ice.",
+        "Top with soda water and garnish with a sprig of lavender."
+      ],
+      "pairings": [
+        "Herb-infused dishes",
+        "Grilled vegetables",
+        "Cheese platter"
+      ],
+      "notes": [
+        "Use culinary-grade lavender for the syrup.",
+        "Adjust the sweetness with more or less lavender syrup."
       ]
     }
     
