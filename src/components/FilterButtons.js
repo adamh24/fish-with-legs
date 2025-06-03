@@ -3,15 +3,8 @@ import "../styles/App.css"; // Import the CSS file for styling
 
 const FilterButtons = ({ filter, onFilterChange }) => {
   return (
-    <div >
-        {/* <div className="sort-buttons">
-            <button
-                className="sort-button"
-                onClick={() => onFilterChange({ ...filter, sort: "name" })}
-                style={{width: "100px", height: "40px", marginRight: "10px", color: "black"}}
-            >Sort By</button>
-        </div> */}
-        <div className="filter-buttons">
+        
+    <div className="filter-buttons">
         {/* Filter by Menu */}
         <select
             className="filter-select"
@@ -45,9 +38,8 @@ const FilterButtons = ({ filter, onFilterChange }) => {
         >
             Clear Filters
         </button>
-        </div>
-
     </div>
+
     
   );
 };

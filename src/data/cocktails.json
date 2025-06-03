@@ -1,6 +1,7 @@
 [
     {
       "id": 1,
+      "date": "2025-05-01",
       "title": "Espresso Martini",
       "menu": "Classic",
       "flavors": ["Espresso", "Vodka", "Coffee Liqueur"],
@@ -26,11 +27,13 @@
       "notes": [
         "Use freshly brewed espresso for the best flavor.",
         "Adjust the sweetness with simple syrup to taste."
-      ]
+      ], 
+      "featured": false
     },
     {
       "id": 2,
       "title": "Pistachio Spritz",
+      "date": "2025-05-02",
       "menu": "Botanical",
       "flavors": ["Pistachio", "Prosecco", "Soda Water"],
       "image": "./assets/cocktail1.png",
@@ -54,39 +57,49 @@
       "notes": [
         "For a stronger pistachio flavor, use pistachio-infused gin.",
         "Experiment with different herbs for garnish."
-      ]
+      ], 
+      "featured": true
     },
     {
       "id": 3,
+      "date": "2025-05-03",
       "title": "Classic Elegance",
       "menu": "Classic",
       "flavors": ["Gin", "Vermouth", "Lemon"],
-      "image": "./assets/cocktail3.png"
+      "image": "./assets/cocktail3.png", 
+      "featured": false
     },
     {
       "id": 4,
       "title": "Long Floral Twist",
+      "date": "2025-05-04",
       "menu": "Botanical",
       "flavors": ["Elderflower", "Gin", "Tonic Water"],
-      "image": "./assets/cocktail4.png"
+      "image": "./assets/cocktail4.png", 
+      "featured": false
     },
     {
       "id": 5,
       "title": "Rumtini",
+      "date": "2025-05-05",
       "menu": "Tropical",
       "flavors": ["Rum", "Pineapple", "Coconut"],
-      "image": "./assets/cocktail7.jpg"
+      "image": "./assets/cocktail7.jpg", 
+      "featured": false
     },
     {
       "id": 6,
       "title": "Elephant",
+      "date": "2025-05-06",
       "menu": "Dali",
       "flavors": ["Amarula", "Sweet Vermouth", "Cacao Bitters"],
-      "image": "./assets/cocktail6.jpg"
+      "image": "./assets/cocktail6.jpg", 
+      "featured": true
     },
     {
       "id": 7,
       "title": "Jasmine and Peach Martini",
+      "date": "2025-05-07",
       "menu": "Dali",
       "flavors": ["Peach", "Jasmine", "Citrus"],
       "image": "./assets/cocktail8.jpg",
@@ -110,11 +123,13 @@
       "notes": [
         "Use fresh jasmine flowers for garnish if available.",
         "Adjust the sweetness with more or less jasmine syrup."
-      ]
+      ], 
+      "featured": true
     }, 
     {
       "id": 8,
       "title": "Spicy Margarita",
+      "date": "2025-05-08",
       "menu": "Tropical",
       "flavors": ["Tequila", "Lime", "Spicy Pepper"],
       "image": "./assets/cocktail4.png",
@@ -139,10 +154,12 @@
       "notes": [
         "Adjust the spiciness by adding more or less jalapeño.",
         "Use fresh lime juice for the best flavor."
-      ]
+      ], 
+      "featured": false
     }, 
     {
       "id": 9,
+      "date": "2025-05-09",
       "title": "Lavender Collins",
       "menu": "Botanical",
       "flavors": ["Lavender", "Gin", "Lemon"],
@@ -167,7 +184,8 @@
       "notes": [
         "Use culinary-grade lavender for the syrup.",
         "Adjust the sweetness with more or less lavender syrup."
-      ]
+      ], 
+      "featured": true
     }
     
   ]
