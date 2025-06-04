@@ -1,8 +1,6 @@
  - hook up blank with data and links 
  - transition on all pages 
  - adam: background art
- - domain and hosting reasearch 
- - clear filter implenetation in cocktails 
  - in cocktail recipies where a modifier is used add a link to that modifier 
  - add modifiefr to search
  - filter by type, base spirit 
