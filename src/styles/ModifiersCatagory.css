@@ -37,6 +37,7 @@
     overflow: hidden;
     margin: 4px;
     transition: transform 0.3s ease;
+    position: relative;
 }
 
 .modifiers-card:hover{
@@ -66,6 +67,7 @@
 }
 
 .modifier-image {
+    z-index: 4;
     width: 25vw;
     height: 35vh;
     background-size: cover;
@@ -81,5 +83,25 @@
 
 .square-one {
     border: 1px solid white;
+    width: calc(100% - 20px);
+    height: calc(100% - 40px);
+
+    top: 20px;
+    left: 10px;
+
+    position: absolute;
+    justify-self: center;
+
+}
+.square-two {
+    border: 1px solid white;
+    width: calc(100% - 40px);
+    height: calc(100% - 20px);
+
+    left: 20px;
+    top: 10px;
+
+    position: absolute;
+    justify-self: center;
 
 }

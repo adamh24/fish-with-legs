@@ -38,7 +38,7 @@
 .square1 {
     border: 1px solid white;
     width: calc(100% - 20px);
-    height: calc(40vh - 40px);
+    height: calc(100% - 40px);
 
     top: 20px;
     left: 10px;
@@ -50,7 +50,7 @@
 .square2 {
     border: 1px solid white;
     width: calc(100% - 40px);
-    height: calc(40vh - 20px);
+    height: calc(100% - 20px);
 
     left: 20px;
     top: 10px;

@@ -31,6 +31,8 @@ return (
 
                         <div className="modifiers-card">
                             <div className="square-one"></div>
+                            <div className="square-two"></div>
+
                             <div className="icon-group">
                                     <div>
                                         
