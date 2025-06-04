@@ -7,7 +7,7 @@ import FilterButtons from "./components/FilterButtons"; // Import the FilterButt
 import SortBy from "./components/SortBy";
 
 const Cocktails = () => {
-  const [filter, setFilter] = useState({ menu: "", flavors: "" });
+  const [filter, setFilter] = useState({ menu: "", flavors: "", baseSpirits: "" });
   const [filteredCocktails, setFilteredCocktails] = useState(cocktailData);
   const [isAnimating, setIsAnimating] = useState(false);
   const [animateType, setAnimateType] = useState("in");
@@ -46,15 +46,21 @@ const Cocktails = () => {
     setIsAnimating(true);
 
     setTimeout(() => {
+      setFilter(newFilter);
+
       const newFilteredCocktails = cocktailData.filter((cocktail) => {
-        const matchesMenu = newFilter.menu ? cocktail.menu === newFilter.menu : true;
-        const matchesflavors = newFilter.flavors
-          ? cocktail.flavors.includes(newFilter.flavors)
-          : true;
-        return matchesMenu && matchesflavors;
+        // Check if the cocktail contains any of the selected base spirits
+        const matchesBaseSpirits =
+          newFilter.baseSpirits.length === 0 ||
+          newFilter.baseSpirits.some((spirit) =>
+            cocktail.ingredients.some((ingredient) =>
+              ingredient.toLowerCase().includes(spirit.toLowerCase())
+            )
+          );
+
+        return matchesBaseSpirits;
       });
 
-      setFilter(newFilter);
       setFilteredCocktails(newFilteredCocktails);
       setAnimateType("in");
 

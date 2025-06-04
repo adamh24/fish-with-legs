@@ -1,46 +1,55 @@
-import React from "react";
-import "../styles/App.css"; // Import the CSS file for styling
+import React, { useState } from "react";
+import "../styles/Filter.css"; // Import the CSS file for styling
 
 const FilterButtons = ({ filter, onFilterChange }) => {
+  const [dropdownOpen, setDropdownOpen] = useState(false); // Track if the dropdown is open
+  const baseSpirits = ["Rum", "Whiskey", "Tequila", "Vodka", "Gin"]; // Base spirits list
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
+  const handleCheckboxChange = (spirit) => {
+    const updatedSpirits = filter.baseSpirits.includes(spirit)
+      ? filter.baseSpirits.filter((s) => s !== spirit) // Remove spirit if already selected
+      : [...filter.baseSpirits, spirit]; // Add spirit if not selected
+
+    onFilterChange({ ...filter, baseSpirits: updatedSpirits });
+  };
+
   return (
-        
     <div className="filter-buttons">
-        {/* Filter by Menu */}
-        <select
-            className="filter-select"
-            onChange={(e) => onFilterChange({ ...filter, menu: e.target.value })}
-        >
-            <option value="">Filter by Menu</option>
-            <option value="Classic">Classic</option>
-            <option value="Botanical">Botanical</option>
-            <option value="Tropical">Tropical</option>
-        </select>
-
-        {/* Filter by Ingredients */}
-        <select
-            className="filter-select"
-            onChange={(e) => onFilterChange({ ...filter, flavors: e.target.value })}
-        >
-            <option value="">Filter by Ingredients</option>
-            <option value="Espresso">Espresso</option>
-            <option value="Vodka">Vodka</option>
-            <option value="Coffee Liqueur">Coffee Liqueur</option>
-            <option value="Pistachio">Pistachio</option>
-            <option value="Prosecco">Prosecco</option>
-            <option value="Rum">Rum</option>
-            <option value="Berries">Berries</option>
-        </select>
-
-        {/* Clear Filters Button */}
-        <button
-            className="clear-button"
-            onClick={() => onFilterChange({ menu: "", flavors: "" })}
-        >
-            Clear Filters
+      {/* Dropdown for Base Spirits */}
+      <div className="sort-by-container">
+        <button className="sort-by-button" onClick={toggleDropdown}>
+          Filter by Base Spirit
         </button>
-    </div>
+        {dropdownOpen && (
+          <div className="sort-by-dropdown">
+            {baseSpirits.map((spirit, index) => (
+              <div key={index} className="sort-by-item">
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={filter.baseSpirits.includes(spirit)}
+                    onChange={() => handleCheckboxChange(spirit)}
+                  />
+                  {spirit}
+                </label>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
 
-    
+      {/* Clear Filters Button */}
+      <button
+        className="clear-button"
+        onClick={() => onFilterChange({ baseSpirits: [] })}
+      >
+        Clear Filters
+      </button>
+    </div>
   );
 };
 
