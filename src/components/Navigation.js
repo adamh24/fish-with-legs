@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FiSearch, FiMenu, FiX } from 'react-icons/fi'; // Import FiX for the cancel button
 import cocktails from '../data/cocktails.json';
+import modifiers from '../data/modifiers.json';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../styles/Navbar.css';
 
@@ -15,15 +16,25 @@ const Navigation = () => {
   const handleSearch = (e) => {
     setSearchValue(e.target.value);
 
-    const matches = cocktails.filter(cocktail =>
+    // Filter cocktails and modifiers based on the search value
+    const cocktailMatches = cocktails.filter(cocktail =>
       cocktail.title && cocktail.title.toLowerCase().includes(e.target.value.toLowerCase())
     );
-    console.log(matches);
-    if(matches.length === cocktails.length) {
+
+    const modifierMatches = modifiers.filter(modifier =>
+      modifier.title && modifier.title.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+
+    // Combine results and remove duplicates
+    const combinedMatches = [...cocktailMatches, ...modifierMatches];
+
+    // If no matches or all items match, clear suggestions
+    if (combinedMatches.length === cocktails.length + modifiers.length) {
       setSuggestions([]);
       return;
     }
-    setSuggestions(matches);
+
+    setSuggestions(combinedMatches);
   };
 
   const handleSearchSubmit = (e) => {
@@ -92,6 +103,9 @@ const Navigation = () => {
               <Link to="/contact">Contact</Link>
               <Link to="/reviews">Reviews</Link>
               <Link to="/spotlight">Spotlight</Link>
+              <Link to={`/personality-quiz`}>Personality Quiz</Link>
+              <Link to={`/knowledge-quiz`}>Knowledge Quiz</Link>
+              
           </div>
         </div>
 
