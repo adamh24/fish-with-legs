@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/fish-with-legs/static/css/main.574ecb78.css",
-    "main.js": "/fish-with-legs/static/js/main.3aa670a5.js",
+    "main.js": "/fish-with-legs/static/js/main.0949920f.js",
     "static/media/adam1.png": "/fish-with-legs/static/media/adam1.5e26472e1d03c4d12874.png",
     "static/media/cocktail1.png": "/fish-with-legs/static/media/cocktail1.c0f8a857732c8965f53a.png",
     "static/media/citrus.jpg": "/fish-with-legs/static/media/citrus.aa035f22efd967c1ae3f.jpg",
@@ -38,10 +38,10 @@
     "static/media/logo.svg": "/fish-with-legs/static/media/logo.6ce24c58023cc2f8fd88.svg",
     "index.html": "/fish-with-legs/index.html",
     "main.574ecb78.css.map": "/fish-with-legs/static/css/main.574ecb78.css.map",
-    "main.3aa670a5.js.map": "/fish-with-legs/static/js/main.3aa670a5.js.map"
+    "main.0949920f.js.map": "/fish-with-legs/static/js/main.0949920f.js.map"
   },
   "entrypoints": [
     "static/css/main.574ecb78.css",
-    "static/js/main.3aa670a5.js"
+    "static/js/main.0949920f.js"
   ]
 }
