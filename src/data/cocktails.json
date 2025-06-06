@@ -67,6 +67,27 @@
       "menu": "Classic",
       "flavors": ["Gin", "Vermouth", "Lemon"],
       "image": "./assets/cocktail3.png", 
+      "description": "A timeless cocktail that combines the crispness of gin with the subtle sweetness of vermouth.",
+      "ingredients": [
+        "2 oz Gin",
+        "1 oz Dry Vermouth",
+        "0.5 oz Fresh Lemon Juice",
+        "Lemon Twist for garnish"
+      ],
+      "instructions": [
+        "Add gin, vermouth, and lemon juice to a shaker with ice.",
+        "Shake well and strain into a chilled cocktail glass.",
+        "Garnish with a lemon twist."
+      ],
+      "pairings": [
+        "Oysters",
+        "Caviar",
+        "Smoked salmon"
+      ],
+      "notes": [
+        "Use high-quality gin for the best flavor.",
+        "Adjust the vermouth to taste for a drier or sweeter cocktail."
+      ],
       "featured": false
     },
     {
@@ -76,6 +97,28 @@
       "menu": "Botanical",
       "flavors": ["Elderflower", "Gin", "Tonic Water"],
       "image": "./assets/cocktail4.png", 
+      "description": "A floral and refreshing cocktail that combines the sweetness of elderflower with the herbal notes of gin.",
+      "ingredients": [
+        "1.5 oz Gin",
+        "0.5 oz Elderflower Liqueur",     
+        "3 oz Tonic Water",
+        "Fresh Cucumber Slices"
+      ],
+      "instructions": [
+        "Fill a glass with ice.",
+        "Add gin and elderflower liqueur.",
+        "Top with tonic water and stir gently.",
+        "Garnish with cucumber slices."
+      ],
+      "pairings": [
+        "Light salads",
+        "Grilled fish",
+        "Cheese platter"
+      ],
+      "notes": [
+        "Use fresh cucumber for garnish to enhance the flavor.",
+        "Adjust the sweetness with more or less elderflower liqueur."
+      ],
       "featured": false
     },
     {
@@ -85,6 +128,27 @@
       "menu": "Tropical",
       "flavors": ["Rum", "Pineapple", "Coconut"],
       "image": "./assets/cocktail7.jpg", 
+      "description": "A tropical twist on the classic martini, combining the flavors of rum, pineapple, and coconut.",
+      "ingredients": [
+        "2 oz White Rum",
+        "1 oz Pineapple Juice",
+        "0.5 oz Coconut Cream",
+        "0.5 oz Fresh Lime Juice"
+      ],
+      "instructions": [
+        "Add all ingredients to a shaker with ice.",
+        "Shake well and strain into a chilled martini glass.",
+        "Garnish with a pineapple slice and cherry."
+      ],
+      "pairings": [
+        "Grilled seafood",
+        "Tropical fruit salad",
+        "Coconut shrimp"
+      ],
+      "notes": [
+        "Use fresh pineapple juice for the best flavor.",
+        "Adjust the sweetness with more or less coconut cream."
+      ],
       "featured": false
     },
     {
@@ -94,6 +158,28 @@
       "menu": "Dali",
       "flavors": ["Amarula", "Sweet Vermouth", "Cacao Bitters"],
       "image": "./assets/cocktail6.jpg", 
+      "description": "A rich and creamy cocktail that combines the exotic flavors of Amarula with the depth of sweet vermouth and cacao bitters.",
+      "ingredients": [
+        "1.5 oz Amarula Cream Liqueur",
+        "1 oz Sweet Vermouth",
+        "2 dashes Cacao Bitters",
+        "Orange Twist for garnish"
+      ],
+      "instructions": [
+        "Add Amarula, sweet vermouth, and cacao bitters to a mixing glass with ice.",
+        "Stir gently until well chilled.",
+        "Strain into a chilled cocktail glass.",
+        "Garnish with an orange twist."
+      ],
+      "pairings": [
+        "Chocolate desserts",
+        "Cheese platter",
+        "Spicy nuts"
+      ],
+      "notes": [
+        "Use high-quality Amarula for the best flavor.",
+        "Adjust the sweetness with more or less sweet vermouth."
+      ],
       "featured": true
     },
     {

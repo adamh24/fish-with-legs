@@ -50,9 +50,12 @@ const Cocktails = () => {
 
       const newFilteredCocktails = cocktailData.filter((cocktail) => {
         // Check if the cocktail contains any of the selected base spirits
+        console.log(newFilter)
+        console.log(newFilter.baseSpirits)
+        console.log(cocktail)
         const matchesBaseSpirits =
           newFilter.baseSpirits.length === 0 ||
-          newFilter.baseSpirits.some((spirit) =>
+          newFilter.baseSpirits.some((spirit) => // what does some do?
             cocktail.ingredients.some((ingredient) =>
               ingredient.toLowerCase().includes(spirit.toLowerCase())
             )
@@ -63,7 +66,7 @@ const Cocktails = () => {
 
       setFilteredCocktails(newFilteredCocktails);
       setAnimateType("in");
-
+ 
       setTimeout(() => {
         setIsAnimating(false);
       }, 200);
