@@ -11,7 +11,6 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    
 }
 
 .feature-title {
@@ -58,4 +57,18 @@
     position: absolute;
     justify-self: center;
 
+}
+
+@media (max-width: 380px) and (max-height: 800px) {
+    .feature {
+        height: 45vh; /* Adjust height for smaller screens */
+    }
+
+    .square1 {
+        height: calc(45vh - 40px);
+    }
+
+    .square2 {
+        height: calc(45vh - 20px);
+    }
 }

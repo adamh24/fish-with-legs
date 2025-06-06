@@ -44,8 +44,8 @@ const App = () => {
     <div className="main-container">
 
       {/* seaweed background */}
-      <img src={require("./assets/seaweed.png")} alt="seaweed" style={{ position: 'absolute', bottom: '0px', left: '-100px', height: 'auto', zIndex: 0 }} />
-      <img src={require("./assets/seaweed.png")} alt="seaweed" style={{ position: 'absolute', bottom: '0px', right: '-100px', height: '80vh', zIndex: 0 }} />
+      {/* <img src={require("./assets/seaweed.png")} alt="seaweed" style={{ position: 'absolute', bottom: '0px', left: '-100px', height: 'auto', zIndex: 0 }} /> */}
+      {/* <img src={require("./assets/seaweed.png")} alt="seaweed" style={{ position: 'absolute', bottom: '0px', right: '-100px', height: '80vh', zIndex: 0 }} /> */}
 
       <Router>
 
