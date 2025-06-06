@@ -9,6 +9,23 @@
     color: white;
     font-family: 'League Spartan', sans-serif;
   }
+
+  .sort-label {
+    font-size: 1.2rem;
+    color: white;
+    font-family: 'League Spartan', sans-serif;
+  }
+  
+  .ingredient-link {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .ingredient-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
   
   .cocktail-image img {
     width: 100%;
