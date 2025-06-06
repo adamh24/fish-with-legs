@@ -3,27 +3,27 @@
         "id": 1,
         "title": "Syrups",
         "description": "Even though you're sweet enough ;)",
-        "image":"./assets/cocktail1.png"
+        "image":"./assets/syrup.jpg"
     },
 
     {
         "id": 2,
         "title": "Infusions",
         "description": "Flavour + Flavour = More Flavour",
-        "image":"./assets/cocktail1.png"
+        "image":"./assets/infusion.jpg"
     },
 
     {
         "id": 3,
         "title": "Foams",
         "description": "Recipies that have you foaming at the mouth",
-        "image":"./assets/cocktail1.png"
+        "image":"./assets/foam.jpg"
     },
 
     {
         "id": 4,
         "title": "Clarifications and Fermentations",
         "description": "Just to be 'clear', these are 'ferm' choices",
-        "image":"./assets/cocktail1.png"
+        "image":"./assets/fermentation.jpg"
     }
 ]

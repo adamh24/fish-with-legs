@@ -30,12 +30,15 @@ return (
                 {subModifiers.map((modifier) => (
 
                         <div className="modifiers-card">
-                             <div className="icon-group">
+                            <div className="square-one"></div>
+                            <div className="square-two"></div>
+
+                            <div className="icon-group">
                                     <div>
                                         
                                     </div>
                             </div>
-                            <div className="text-block">
+                            <div className="text-blk">
                                 <span className="modifiers-title">{modifier.title}</span>
                                 <span className="modifiers-discription">{modifier.breif}</span>
                             </div>
