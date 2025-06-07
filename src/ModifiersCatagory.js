@@ -2,6 +2,7 @@
 import modifiers from "./data/modifiers.json";
 import { useParams } from "react-router-dom";
 import "./styles/ModifiersCatagory.css";
+import Allergens from "./components/Allergens.js"
 import { useEffect, useState } from "react";
 
 const ModifiersCatagory = () => {
@@ -17,9 +18,9 @@ const ModifiersCatagory = () => {
 
     const { catagory } = useParams(); // get category title from url 
     console.log("catagory: " + catagory)
-    const subModifiers = modifiers.filter((c) => c.catagory === catagory);
+    const subModifiers = modifiers.filter((modifier) => modifier.catagory === catagory);
     
-return (
+    return (
         <div className={`catagory-page ${isLoaded ? "fade-in" : "fade-out"}`}>
             <div className="title-container">
                 <span className="subtitle">{catagory}</span>
@@ -34,9 +35,7 @@ return (
                             <div className="square-two"></div>
 
                             <div className="icon-group">
-                                    <div>
-                                        
-                                    </div>
+                                        <Allergens modifier={modifier}/>                                  
                             </div>
                             <div className="text-blk">
                                 <span className="modifiers-title">{modifier.title}</span>

@@ -1,0 +1,85 @@
+[
+    {
+        "id":1,
+        "title": "Celery",
+        "image":"../assets/allergens/Icons-Celery.png"
+    },
+
+    {
+        "id":2,
+        "title": "Crustaceans",
+        "image":"../assets/allergens/Icons-Crustaceans.png"
+    },
+
+    {
+        "id":3,
+        "title": "Egg",
+        "image":"../assets/allergens/Icons-Egg.png"
+    },
+
+    {
+        "id":4,
+        "title": "Fish",
+        "image":"../assets/allergens/Icons-Fish.png"
+    },
+
+    {
+        "id":5,
+        "title": "Gluten",
+        "image": "../assets/allergens/Icons-Gluten.png"
+    },
+
+    {
+        "id":6,
+        "title": "Lupin",
+        "image":"../assets/allergens/Icons-Lupin.png"
+    },
+
+    {
+        "id":7,
+        "title": "Milk",
+        "image":"../assets/allergens/Icons-Milk.png"
+    },
+
+    {
+        "id":8,
+        "title": "Molluscs",
+        "image":"../assets/allergens/Icons-Molluscs.png"
+    },
+
+    {
+        "id":9,
+        "title": "Mustard",
+        "image":"../assets/allergens/Icons-Mustard.png"
+    },
+
+    {
+        "id":10,
+        "title": "Peanuts",
+        "image":"../assets/allergens/Icons-Peanuts.png"
+    },
+
+    {
+        "id":11,
+        "title": "Sesame",
+        "image":"../assets/allergens/Icons-Sesame.png"
+    },
+
+    {
+        "id":12,
+        "title": "So2",
+        "image":"../assets/allergens/Icons-So2.png"
+    },
+
+    {
+        "id":13,
+        "title": "Soyabeans",
+        "image":"../assets/allergens/Icons-Soyabeans.png"
+    },
+
+    {
+        "id":14,
+        "title": "Treenuts",
+        "image":"../assets/allergens/Icons-Treenuts.png"
+    }
+]
