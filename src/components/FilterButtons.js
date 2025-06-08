@@ -1,31 +1,48 @@
-import React, { useState } from "react";
-import "../styles/Filter.css"; // Import the CSS file for styling
+import React, { useState, useEffect } from "react";
+import "../styles/Filter.css";
 
 const FilterButtons = ({ filter, onFilterChange }) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false); // Track if the dropdown is open
-  const baseSpirits = ["Rum", "Whiskey", "Tequila", "Vodka", "Gin"]; // Base spirits list
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const baseSpirits = ["Rum", "Whiskey", "Tequila", "Vodka", "Gin"];
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
 
+  const closeDropdown = () => {
+    setDropdownOpen(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest(".sort-by-container")) {
+        closeDropdown();
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   const handleCheckboxChange = (spirit) => {
     const updatedSpirits = filter.baseSpirits.includes(spirit)
-      ? filter.baseSpirits.filter((s) => s !== spirit) // Remove spirit if already selected
-      : [...filter.baseSpirits, spirit]; // Add spirit if not selected
+      ? filter.baseSpirits.filter((s) => s !== spirit)
+      : [...filter.baseSpirits, spirit];
 
     onFilterChange({ ...filter, baseSpirits: updatedSpirits });
   };
 
   return (
     <div className="filter-buttons">
-      {/* Dropdown for Base Spirits */}
       <div className="sort-by-container">
         <button className="sort-by-button" onClick={toggleDropdown}>
           Filter by Base Spirit
         </button>
         {dropdownOpen && (
           <div className="sort-by-dropdown">
+            
             {baseSpirits.map((spirit, index) => (
               <div key={index} className="sort-by-item">
                 <label>
@@ -38,17 +55,15 @@ const FilterButtons = ({ filter, onFilterChange }) => {
                 </label>
               </div>
             ))}
+            <button
+              className="clear-button"
+              onClick={() => onFilterChange({ baseSpirits: [] })}
+            >
+              Clear Filters
+            </button>
           </div>
         )}
       </div>
-
-      {/* Clear Filters Button */}
-      <button
-        className="clear-button"
-        onClick={() => onFilterChange({ baseSpirits: [] })}
-      >
-        Clear Filters
-      </button>
     </div>
   );
 };

@@ -21,22 +21,6 @@
   background-color: #284d3d;
 }
 
-/* Dropdown content */
-.sort-by-dropdown {
-  opacity: 0; /* Start fully transparent */
-  transform: translateY(-10px); /* Start slightly above */
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade-in and slide-down */
-  display: block; /* Ensure it's always block for animation */
-  position: absolute;
-  /* top: 100%; */
-  width: 100%;
-  left: 0;
-  background-color: #284d3d;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  border-radius: 0.25rem;
-  z-index: 10;
-  pointer-events: none; /* Prevent interaction when hidden */
-}
 
 .sort-by-container:hover .sort-by-dropdown {
   opacity: 1; /* Fully visible */
@@ -96,18 +80,25 @@
 
 /* Dropdown content */
 .sort-by-dropdown {
+  opacity: 0; /* Start fully transparent */
+  transform: translateY(-10px); /* Start slightly above */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade-in and slide-down */
   position: absolute;
-  top: 100%;
+  /* top: 100%; */
+  width: 100%;
   left: 0;
-  background-color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #284d3d;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   border-radius: 0.25rem;
   z-index: 10;
+  pointer-events: none; /* Prevent interaction when hidden */
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
+
+
 
 /* Dropdown items */
 .sort-by-item {
@@ -136,3 +127,30 @@
 .clear-button:hover {
   background-color: #7a5a3e;
 }
+
+/* Close button for dropdown */
+.close-dropdown {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.close-dropdown:hover {
+  color: #ff6b6b;
+}
+
+/* Ensure dropdown transitions remain smooth */
+/* .sort-by-dropdown {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sort-by-dropdown[style*="display: block"] {
+  opacity: 1;
+  transform: translateY(0);
+} */
