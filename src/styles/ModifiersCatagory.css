@@ -46,7 +46,9 @@
 
 .text-blk {
     display: flex;
-    margin-left: 3em;
+    width: 25%;
+    flex-wrap: wrap;
+    align-content: center ;
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
@@ -55,7 +57,7 @@
 .modifiers-title {
     color: #ffffff;
     font-family: 'antonio';
-    font-size: x-large;
+    font-size: xx-large;
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
@@ -63,12 +65,13 @@
 
 .modifiers-discription {
     color: #ffffff;
+    font-size: large;
     font-family: 'League Spartan', sans-serif;
 }
 
 .modifier-image {
     z-index: 4;
-    width: 25vw;
+    width: 25%;
     height: 35vh;
     background-size: cover;
     background-position: center;
@@ -104,4 +107,11 @@
     position: absolute;
     justify-self: center;
 
+}
+
+.icon-group {
+    width: 50%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
 }

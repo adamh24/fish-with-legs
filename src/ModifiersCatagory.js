@@ -1,5 +1,6 @@
 
 import modifiers from "./data/modifiers.json";
+import Allergens from "./components/Allergens";
 import { useParams } from "react-router-dom";
 import "./styles/ModifiersCatagory.css";
 import { useEffect, useState } from "react";
@@ -34,9 +35,7 @@ return (
                             <div className="square-two"></div>
 
                             <div className="icon-group">
-                                    <div>
-                                        
-                                    </div>
+                                        <Allergens modifier={modifier} />
                             </div>
                             <div className="text-blk">
                                 <span className="modifiers-title">{modifier.title}</span>

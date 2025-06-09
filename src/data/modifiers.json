@@ -12,6 +12,24 @@
             "Vegan Cream"
         ],
 
+        "allergens":[
+            "Gluten",
+            "Milk",
+            "Celery",
+            "Treenuts",
+            "Soyabeans",
+            "Peanuts",
+            "Sesame",
+            "So2",
+            "Lupin",
+            "Mustard",
+            "Crustaceans",
+            "Fish",
+            "Egg",
+            "Molluscs"
+
+        ],
+
         "instructions": [
             "Add all ingredients to a cream whipper.",
             "Seel and charge with 2 NO2 charges",
@@ -52,6 +70,11 @@
         ],
         "notes": [
             "Squirt with purpose!"
+        ],
+
+        "allergens":[
+            "Gluten",
+            "Milk"
         ]
 
     },
