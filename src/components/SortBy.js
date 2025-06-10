@@ -12,6 +12,19 @@ const SortBy = ({ sortBy, onSortChange }) => {
     setDropdownOpen(false);
   };
 
+  useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (!event.target.closest(".sort-by-container")) {
+          closeDropdown();
+        }
+      };
+  
+      document.addEventListener("click", handleClickOutside);
+      return () => {
+        document.removeEventListener("click", handleClickOutside);
+      };
+    }, []);
+
   return (
     <div className="sort-by-container">
       <button className="sort-by-button" onClick={toggleDropdown}>
