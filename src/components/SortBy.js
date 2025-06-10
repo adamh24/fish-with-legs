@@ -12,19 +12,6 @@ const SortBy = ({ sortBy, onSortChange }) => {
     setDropdownOpen(false);
   };
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!event.target.closest(".sort-by-container")) {
-        closeDropdown();
-      }
-    };
-
-    document.addEventListener("click", handleClickOutside);
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
-
   return (
     <div className="sort-by-container">
       <button className="sort-by-button" onClick={toggleDropdown}>
@@ -36,7 +23,6 @@ const SortBy = ({ sortBy, onSortChange }) => {
             className={`sort-by-item ${sortBy === "alphabetical" ? "active" : ""}`}
             onClick={() => {
               onSortChange({ target: { value: "alphabetical" } });
-              closeDropdown();
             }}
           >
             Alphabetical
@@ -45,7 +31,6 @@ const SortBy = ({ sortBy, onSortChange }) => {
             className={`sort-by-item ${sortBy === "recent" ? "active" : ""}`}
             onClick={() => {
               onSortChange({ target: { value: "recent" } });
-              closeDropdown();
             }}
           >
             Recent
@@ -54,7 +39,6 @@ const SortBy = ({ sortBy, onSortChange }) => {
             className={`sort-by-item ${sortBy === "featured" ? "active" : ""}`}
             onClick={() => {
               onSortChange({ target: { value: "featured" } });
-              closeDropdown();
             }}
           >
             Featured

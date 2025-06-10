@@ -213,14 +213,7 @@ body {
   margin-left: 10px;
 }
 
-.filter-buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-bottom: 20px;
-  max-height: 50px;
-  /* width: 100vw; */
-}
+
 
 .filter-select {
   margin: 0 10px;

@@ -22,30 +22,34 @@
 }
 
 
-.sort-by-container:hover  {
-  opacity: 1; /* Fully visible */
-  transform: translateY(0); /* Move to original position */
-  pointer-events: auto; /* Allow interaction when visible */
-}
 
 /* Dropdown items */
 .sort-by-item {
-  padding: 0.5rem 1rem;
-  color: white;
-  text-decoration: none;
-  display: block;
-  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  font-size: 1rem;
+  color: white;
+  background-color: #365f4d; /* Default background color */
+  border: 1px solid #284d3d; /* Border for the button */
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  text-align: center;
+  width: 100%; /* Full width for a button-like appearance */
+  box-sizing: border-box;
 }
 
+
 .sort-by-item:hover {
-  background-color: #365f4d;
+  background-color: #284d3d; /* Darker background on hover */
+  border-color: #243f33; /* Darker border on hover */
 }
 
 .sort-by-item.active {
-  background-color: #243f33;
-  font-weight: bold;
+  background-color: #243f33; /* Active background color */
+  border-color: #1b2b26; /* Active border color */
 }
 
 /* Filter container */
@@ -61,6 +65,7 @@
   position: relative;
   display: inline-block;
   font-family: 'League Spartan', sans-serif;
+  width: 15vw;
 }
 
 /* Dropdown button */
@@ -73,6 +78,7 @@
   border-radius: 0.25rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 100%;
 }
 
 .sort-by-button:hover {
