@@ -149,18 +149,54 @@
 }
 
 .checkbox-label {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: white;
-  z-index: 11; /* Ensure checkboxes are above other elements */
+  background-color: #365f4d; /* Background for the checkbox container */
+  border: 1px solid #284d3d; /* Border for the checkbox container */
+  border-radius: 0.25rem;
+  padding: 0.4rem 1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  width: 100%; /* Full width for a button-like appearance */
+  box-sizing: border-box;
 }
 
-input[type = "checkbox"] {
-  margin-right: 0.5rem;
-  cursor: pointer;
-  height: 18px;
+.checkbox-label:hover {
+  background-color: #284d3d; /* Darker background on hover */
+  border-color: #243f33; /* Darker border on hover */
+}
+
+.checkbox-label input[type="checkbox"] {
+  display: none; /* Hide the default checkbox */
+}
+
+.checkbox-label span {
+  flex-grow: 1; /* Allow the text to take up available space */
+  text-align: left; /* Align text to the left */
+  padding-top: 1px;
+}
+
+.checkbox-label.checked {
+  background-color: #243f33; /* Active background color */
+  border-color: #1b2b26; /* Active border color */
+}
+
+/* Checkbox indicator (custom checkmark) */
+.checkbox-label::before {
+  content: "";
+  display: inline-block;
   width: 18px;
+  height: 18px;
+  margin-right: 0.5rem;
+  border: 2px solid white;
   border-radius: 4px;
+  background-color: transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.checkbox-label.checked::before {
+  background-color: #ffffff; /* Checkmark background color */
+  border-color: #ffffff; /* Checkmark border color */
 }
