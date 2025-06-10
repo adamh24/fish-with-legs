@@ -13,18 +13,18 @@ const FilterButtons = ({ filter, onFilterChange }) => {
     setDropdownOpen(false);
   };
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!event.target.closest(".sort-by-container")) {
-        closeDropdown();
-      }
-    };
+  // useEffect(() => {
+  //   const handleClickOutside = (event) => {
+  //     if (!event.target.closest(".sort-by-container")) {
+  //       closeDropdown();
+  //     }
+  //   };
 
-    document.addEventListener("click", handleClickOutside);
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
+  //   document.addEventListener("click", handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener("click", handleClickOutside);
+  //   };
+  // }, []);
 
   const handleCheckboxChange = (spirit) => {
     const updatedSpirits = filter.baseSpirits.includes(spirit)
@@ -45,13 +45,15 @@ const FilterButtons = ({ filter, onFilterChange }) => {
             
             {baseSpirits.map((spirit, index) => (
               <div key={index} className="sort-by-item">
-                <label>
+                <label className="checkbox-label">
                   <input
                     type="checkbox"
                     checked={filter.baseSpirits.includes(spirit)}
                     onChange={() => handleCheckboxChange(spirit)}
                   />
+                  <span style={{lineHeight: "18px", fontSize: "12px"}}>
                   {spirit}
+                  </span>
                 </label>
               </div>
             ))}

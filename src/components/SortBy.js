@@ -32,9 +32,6 @@ const SortBy = ({ sortBy, onSortChange }) => {
       </button>
       {dropdownOpen && (
         <div className="sort-by-dropdown">
-          <button className="close-dropdown" onClick={closeDropdown}>
-            X
-          </button>
           <div
             className={`sort-by-item ${sortBy === "alphabetical" ? "active" : ""}`}
             onClick={() => {

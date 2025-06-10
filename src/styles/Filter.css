@@ -22,7 +22,7 @@
 }
 
 
-.sort-by-container:hover .sort-by-dropdown {
+.sort-by-container:hover  {
   opacity: 1; /* Fully visible */
   transform: translateY(0); /* Move to original position */
   pointer-events: auto; /* Allow interaction when visible */
@@ -53,6 +53,7 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  z-index: 5;
 }
 
 /* Dropdown container */
@@ -80,31 +81,35 @@
 
 /* Dropdown content */
 .sort-by-dropdown {
-  opacity: 0; /* Start fully transparent */
-  transform: translateY(-10px); /* Start slightly above */
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade-in and slide-down */
+  opacity: 1; /* Start fully transparent */
   position: absolute;
-  /* top: 100%; */
   width: 100%;
   left: 0;
   background-color: #284d3d;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   border-radius: 0.25rem;
-  z-index: 10;
-  pointer-events: none; /* Prevent interaction when hidden */
+  z-index: 10; /* Ensure it is above other elements */
+  pointer-events: auto; /* Prevent interaction when hidden */
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  /* transition: opacity 0.3s ease, transform 0.3s ease; */
 }
 
+
+/* .sort-by-dropdown[style*="display: block"] {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto; 
+} */
 
 
 /* Dropdown items */
 .sort-by-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.1rem;
   font-size: 0.9rem;
   cursor: pointer;
 }
@@ -143,14 +148,19 @@
   color: #ff6b6b;
 }
 
-/* Ensure dropdown transitions remain smooth */
-/* .sort-by-dropdown {
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: white;
+  z-index: 11; /* Ensure checkboxes are above other elements */
 }
 
-.sort-by-dropdown[style*="display: block"] {
-  opacity: 1;
-  transform: translateY(0);
-} */
+input[type = "checkbox"] {
+  margin-right: 0.5rem;
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+  border-radius: 4px;
+}
