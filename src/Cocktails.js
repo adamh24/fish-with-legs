@@ -42,9 +42,9 @@ const Cocktails = () => {
 
         setTimeout(() => {
           setIsAnimating(false);
-        }, 400); // Match the animation duration
+        }, 250); // Match the animation duration
       }, 50); // Small delay to ensure display is updated
-    }, 400); // Match the animation duration
+    }, 250); // Match the animation duration
   };
 
   const handleFilterChange = (newFilter) => {
@@ -110,7 +110,7 @@ const Cocktails = () => {
               ? "translateX(100%)"
               : "translateX(-100%)"
             : "translateX(0)",
-          transition: `opacity 0.4s ease, transform 0.4s ease`,
+          transition: `opacity 0.3s ease, transform 0.3s ease`,
         }}
       >
         <ResponsiveMasonry>
