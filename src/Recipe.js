@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom"; // Import Link for navigatio
 import cocktails from "./data/cocktails.json"; // Import the cocktails data
 import modifiers from "./data/modifiers.json"; // Import the modifiers data
 import "./styles/Recipe.css"; // Import CSS for styling
+import Allergens from "./components/Allergens"; // Import the Allergens component
 
 const Recipe = () => {
   // Find the cocktail with the matching title
@@ -68,6 +69,10 @@ const Recipe = () => {
                 <li key={index}>{instruction}</li>
               ))}
             </ol>
+          </div>
+          <div className="allergen-icons">
+            <h2>Allergens</h2>
+            <Allergens modifier={cocktail} />
           </div>
         </div>
       </div>

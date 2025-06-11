@@ -35,7 +35,9 @@ return (
                             <div className="square-two"></div>
 
                             <div className="icon-group">
+                                <div className="icon-container">
                                         <Allergens modifier={modifier} />
+                                </div>
                             </div>
                             <div className="text-blk">
                                 <span className="modifiers-title">{modifier.title}</span>

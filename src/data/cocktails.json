@@ -24,6 +24,10 @@
         "Cheesecake",
         "Tiramisu"
       ],
+      "allergens": [
+        "Gluten",
+        "Milk"
+      ],
       "notes": [
         "Use freshly brewed espresso for the best flavor.",
         "Adjust the sweetness with simple syrup to taste."
