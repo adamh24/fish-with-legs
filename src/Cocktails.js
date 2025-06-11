@@ -9,10 +9,11 @@ import SortBy from "./components/SortBy";
 const Cocktails = () => {
   const [filter, setFilter] = useState({ menu: "", flavors: "", baseSpirits: "" });
   const [filteredCocktails, setFilteredCocktails] = useState(cocktailData);
+  const [sortBy, setSortBy] = useState("alphabetical");
   const [isAnimating, setIsAnimating] = useState(false);
   const [animateType, setAnimateType] = useState("in");
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [sortBy, setSortBy] = useState("alphabetical");
+  const [isLoaded, setIsLoaded] = useState(true);
+  const [isHidden, setIsHidden] = useState(false); // New state to control display
 
   // Sorting logic
   const getSortedCocktails = () => {
@@ -27,35 +28,37 @@ const Cocktails = () => {
     return sorted;
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoaded(true);
-    }, 100);
+  const handleSortChange = (e) => {
+    setAnimateType("out");
+    setIsAnimating(true);
 
-    if (filteredCocktails !== cocktailData) {
+    setTimeout(() => {
+      setIsHidden(true); // Hide the div after animating out
+      setSortBy(e.target.value);
+
       setTimeout(() => {
-        setIsAnimating(true);
-      }, 50);
-    } else {
-      setIsAnimating(false);
-    }
-  }, [filteredCocktails]);
+        setIsHidden(false); // Show the div before animating back in
+        setAnimateType("in");
+
+        setTimeout(() => {
+          setIsAnimating(false);
+        }, 400); // Match the animation duration
+      }, 50); // Small delay to ensure display is updated
+    }, 400); // Match the animation duration
+  };
 
   const handleFilterChange = (newFilter) => {
     setAnimateType("out");
     setIsAnimating(true);
 
     setTimeout(() => {
+      setIsHidden(true); // Hide the div after animating out
       setFilter(newFilter);
 
       const newFilteredCocktails = cocktailData.filter((cocktail) => {
-        // Check if the cocktail contains any of the selected base spirits
-        console.log(newFilter)
-        console.log(newFilter.baseSpirits)
-        console.log(cocktail)
         const matchesBaseSpirits =
           newFilter.baseSpirits.length === 0 ||
-          newFilter.baseSpirits.some((spirit) => // what does some do?
+          newFilter.baseSpirits.some((spirit) =>
             cocktail.ingredients.some((ingredient) =>
               ingredient.toLowerCase().includes(spirit.toLowerCase())
             )
@@ -65,16 +68,16 @@ const Cocktails = () => {
       });
 
       setFilteredCocktails(newFilteredCocktails);
-      setAnimateType("in");
- 
-      setTimeout(() => {
-        setIsAnimating(false);
-      }, 200);
-    }, 200);
-  };
 
-  const handleSortChange = (e) => {
-    setSortBy(e.target.value);
+      setTimeout(() => {
+        setIsHidden(false); // Show the div before animating back in
+        setAnimateType("in");
+
+        setTimeout(() => {
+          setIsAnimating(false);
+        }, 400); // Match the animation duration
+      }, 50); // Small delay to ensure display is updated
+    }, 400); // Match the animation duration
   };
 
   const getRandomHeight = () => {
@@ -84,25 +87,35 @@ const Cocktails = () => {
 
   return (
     <div className={`masonry-container ${isLoaded ? "fade-in" : "fade-out"}`}>
-      <div style={{ display: "flex", alignItems: "space-between", gap: "1rem", marginBottom: "1rem", aspectRatio: "auto", justifyContent: "space-between" }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "space-between",
+          gap: "1rem",
+          marginBottom: "1rem",
+          aspectRatio: "auto",
+          justifyContent: "space-between",
+        }}
+      >
         <SortBy sortBy={sortBy} onSortChange={handleSortChange} />
         <FilterButtons filter={filter} onFilterChange={handleFilterChange} />
       </div>
       <div
         id="animation-div"
         style={{
+          display: isHidden ? "none" : "block", // Dynamically control display
           opacity: isAnimating ? 0 : 1,
           transform: isAnimating
             ? animateType === "in"
               ? "translateX(100%)"
               : "translateX(-100%)"
             : "translateX(0)",
-          transition: `opacity 0.4s ease, transform 0.4s ease `,
+          transition: `opacity 0.4s ease, transform 0.4s ease`,
         }}
       >
         <ResponsiveMasonry>
           <Masonry>
-            {getSortedCocktails().map((cocktail, index) => (
+            {getSortedCocktails().map((cocktail) => (
               <CocktailCard
                 key={cocktail.id}
                 image={require(`${cocktail.image}`)}
