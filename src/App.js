@@ -21,7 +21,7 @@ import PersonalityQuiz from "./components/PersonalityQuiz";
 import KnowledgeQuiz from "./components/KnowledgeQuiz";
 
 const App = () => {
-
+// test
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
 
 
