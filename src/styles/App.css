@@ -1,10 +1,9 @@
 .main-container {
-   background-color: #203F2A;
   background-image: url('../assets/FWL_Background.jpg'); /* Add your background image path */
   background-size: cover;
   background-position: center;
+  background-attachment: scroll;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   min-height: 100vh;
   overflow: hidden;
 
@@ -28,6 +27,7 @@ body {
   transition: transform 0.3s ease; /* Smooth zoom-in effect */
   position: relative; /* Ensure the gradient overlay is positioned correctly */
   margin-inline: 1.2em;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
 
 .image-button::before {
@@ -175,7 +175,6 @@ body {
 .card {
   position: relative;
   justify-content: flex-end;
-  border-radius: 10px;
   overflow: hidden;
   margin-bottom: 10px;
   display: flex;
@@ -185,6 +184,7 @@ body {
   background-size: cover;
   background-position: center;
   width: -webkit-fill-available;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
 
 .overlay {

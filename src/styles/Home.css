@@ -3,6 +3,7 @@
     height: 50vh;
     z-index: 2;
     margin-left: 2em;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
 
 .feature-container {
