@@ -1,7 +1,13 @@
 .main-container {
-  background-color: #203F2A;
+   background-color: #203F2A;
+  background-image: url('../assets/FWL_Background.jpg'); /* Add your background image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: hidden;
+
 }
 
 html,
