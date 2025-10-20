@@ -19,6 +19,7 @@ import ModifiersCatagory from "./ModifiersCatagory";
 import Quiz from "./components/Quiz";
 import PersonalityQuiz from "./components/PersonalityQuiz";
 import KnowledgeQuiz from "./components/KnowledgeQuiz";
+import Training from "./Training";
 
 const App = () => {
 // test
@@ -67,11 +68,12 @@ const App = () => {
             <Route path="/spotlight" element={<Spotlight />} />
             <Route path="/personality-quiz" element={<PersonalityQuiz />} />
             <Route path="/knowledge-quiz" element={<KnowledgeQuiz />} />
+            <Route path="/Training" element={<Training />} />
             {/* <Route path="/modifiers" element={<Modifiers />} />
             <Route path="/ingredients" element={<Ingredients />} />
             <Route path="/history" element={<History />} />
             
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/trainging" element={<Training />} />
             */} 
 
         </Routes>

@@ -1,0 +1,19 @@
+[
+    {
+        "id":1,
+        "title": "Working",
+        "image": "./assets/draft.jpg"
+    },
+
+    {
+        "id":2,
+        "title": "Craft",
+        "image": "./assets/draft.jpg"
+    },
+     
+    {
+        "id":3,
+        "title": "Expedition",
+        "image": "./assets/draft.jpg"
+    }
+]

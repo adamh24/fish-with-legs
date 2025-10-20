@@ -38,6 +38,7 @@ return (
                                         
                                     </div>
                             </div>
+                            
                             <div className="text-blk">
                                 <span className="modifiers-title">{modifier.title}</span>
                                 <span className="modifiers-discription">{modifier.breif}</span>

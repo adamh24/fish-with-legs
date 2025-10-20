@@ -2,11 +2,8 @@
   background-image: url('../assets/FWL_Background.jpg'); /* Add your background image path */
   background-size: cover;
   background-position: center;
-  background-attachment: scroll;
-  background-repeat: no-repeat;
   min-height: 100vh;
   overflow: hidden;
-
 }
 
 html,

@@ -100,7 +100,7 @@ const Navigation = () => {
               </div>
               <Link to="/sustainability">Sustainability</Link>
               <Link to="/about">About</Link>
-              <Link to="/contact">Contact</Link>
+              <Link to="/training">Training</Link>
               <Link to="/reviews">Reviews</Link>
               <Link to="/spotlight">Spotlight</Link>
               <Link to={`/personality-quiz`}>Personality Quiz</Link>
@@ -133,7 +133,7 @@ const Navigation = () => {
         {!searchActive && (
           <div className="nav-right">
             <Link to="/about" className="menu-text">About</Link>
-            <Link to="/contact" className="menu-text">Contact</Link>
+            <Link to="/training" className="menu-text">Training</Link>
             <FiSearch className="search-icon" onClick={() => setSearchActive(true)} />
           </div>
         )}
