@@ -20,6 +20,7 @@ import Quiz from "./components/Quiz";
 import PersonalityQuiz from "./components/PersonalityQuiz";
 import KnowledgeQuiz from "./components/KnowledgeQuiz";
 import Training from "./Training";
+import Programme from "./Programme";
 
 const App = () => {
 // test
@@ -68,7 +69,8 @@ const App = () => {
             <Route path="/spotlight" element={<Spotlight />} />
             <Route path="/personality-quiz" element={<PersonalityQuiz />} />
             <Route path="/knowledge-quiz" element={<KnowledgeQuiz />} />
-            <Route path="/Training" element={<Training />} />
+            <Route path="/training" element={<Training />} />
+            <Route path="/training/:programme" element={<Programme />} />
             {/* <Route path="/modifiers" element={<Modifiers />} />
             <Route path="/ingredients" element={<Ingredients />} />
             <Route path="/history" element={<History />} />

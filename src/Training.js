@@ -1,4 +1,4 @@
-// import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import './styles/Training.css';
 import trainingdata from "./data/training.json";
 import { useEffect, useState } from "react";
@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const Training = () => {
     const [isLoaded, setIsLoaded] = useState(false);
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
       useEffect(() => {
         // Trigger the fade-in animation on load
@@ -14,6 +14,10 @@ const Training = () => {
           setIsLoaded(true);
         }, 100); // Delay to ensure smooth animation
       }, []);
+    
+    const handleCardClick = (title) => {
+        navigate(`/training/${title}`);
+    }
 
 return (
         <div className={`catagory-page ${isLoaded ? "fade-in" : "fade-out"}`}>
@@ -23,7 +27,7 @@ return (
 
             <div className="programme-deck">
                 {trainingdata.map((training) => (
-                <div className="programme-card">
+                <div className="programme-card" onClick={() => handleCardClick(training.title)}>
                     
                     <div className="programme-image"
                     style={{backgroundImage: `url(${require(`${training.image}`)})`}}>                       

@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 const ModifiersCatagory = () => {
     const [isLoaded, setIsLoaded] = useState(false);
     
-
     useEffect(() => {
         // Trigger the fade-in animation on load
         setTimeout(() => {
