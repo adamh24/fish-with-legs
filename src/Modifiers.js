@@ -28,6 +28,13 @@ const Modifiers = () => {
                 <span className="subtitle">Modifiers</span>
             </div>
 
+            <div>
+                <div className="all-button">
+                    <div className="all-image"
+                    style={{backgroundImage: `url(${require(`./assets/beer.png`)})`}}></div>
+                    <span className="all-text">View All</span>
+                </div>
+
             <div className="catagory-deck">
                   {modifierdata.map((modifier) => (
                     <div className="catagory-card" onClick={() => handleCardClick(modifier.title)}>
@@ -47,6 +54,8 @@ const Modifiers = () => {
                 ))}
 
             </div>
+            </div>
+            
         </div>
     );
 }

@@ -6,8 +6,8 @@
 }
 
 .catagory-card {
-    width: 47vw; /* Adjust the width of the cards */
-    height: 36vh; /* Maintain a 4:3 aspect ratio */
+    width: 100%; /* Adjust the width of the cards */
+    height: 100%; /* Maintain a 4:3 aspect ratio */
     z-index: 4;
     position: relative;
     overflow: hidden;
@@ -49,8 +49,8 @@
 .catagory-deck {
     display: grid; /* Use CSS Grid for layout */
     grid-template-columns: repeat(2, 1fr); /* Create 2 columns of equal width */
-    gap: 10px; /* Add spacing between cards */
-    padding: 10px; /* Add padding around the grid */
+    gap: 40px; /* Add spacing between cards */
+    padding: 40px; /* Add padding around the grid */
     justify-items: center; /* Center the cards horizontally */
     align-items: center; /* Center the cards vertically */
     height: 80vh; /* Ensure the grid fits within 80% of the viewport height */
@@ -82,4 +82,51 @@
 .modifiers-page.fade-out {
   opacity: 0; /* Fully transparent */
   transform: translateY(20px); /* Slightly below */
+}
+
+.all-button {
+   width: 100%;
+   height: 5vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+   padding-left: 40px;
+   padding-right: 40px;
+   transition: transform 0.3s ease;
+   cursor: pointer;
+   position: relative;
+}
+
+.all-image::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.7) 100%);
+}
+
+.all-button:hover {
+    transform: scale(1.05); /* Add a zoom effect on hover */
+}
+
+.all-text {
+     color: #ffffff;
+    font-family: 'antonio';
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    position: absolute;
+    z-index: 5;
+}
+
+.all-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
